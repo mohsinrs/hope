@@ -2,19 +2,19 @@
 	<div class="span12">
 		<div class="box box-color box-bordered">
 			<div class="box-title">
-				<h3><i class="icon-edit"></i> Offers</h3>
+				<h3><i class="icon-edit"></i> Specialities</h3>
 				<div class="actions">
-					<a href="/index.php/offers/view" data-toggle="modal" class="btn">
-					<i class="glyphicon-circle_plus"></i> Add Offer</a>
+					<a href="/index.php/speciality/view" data-toggle="modal" class="btn">
+					<i class="glyphicon-circle_plus"></i> Add Speciality</a>
 				</div>
 			</div>
 			<table class="table table-hover table-nomargin dataTable table-bordered">
 				<thead>
 					<tr>
 						<th>Serial #</th>
-						<th>Doctor</th>
-						<th class='hidden-350'>Speciality</th>
-						<th class='hidden-1024'>Vacancies</th>
+						<th>Name</th>
+						<th class='hidden-350'>Type</th>
+						<th class='hidden-1024'>Status</th>
 						<th class='hidden-480'>Action</th>
 					</tr>
 				</thead>

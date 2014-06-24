@@ -2,29 +2,40 @@
 
 class Students extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
+    function __construct()
+    {
+        // Call the Model constructor
+        parent::__construct();
+        $this->load->model('Student_model');
+    }
+
 	public function index()
 	{
-		$this->load->view('students/index');
+        $data = array();
+        $data['result'] = $this->Student_model->fetchAll();
+
+		$this->load->view('students/index', $data);
 	}
 
-	public function view()
+	public function view($id)
 	{
-		$this->load->view('students/view');
+        $data = '';
+		if( $this->input->post('submit') ) {
+			$result = $this->Student_model->insert($this->input->post());
+            if($result == true) {
+                $this->session->set_flashdata('message', 'Student added');
+                redirect('/students/index');
+            } else {
+                $this->session->set_flashdata('message', 'Student can not be added');
+            }
+		}
+
+        if(!is_null($id)) {
+            $data = $this->Student_model->getOne($id);
+            var_dump($data); exit;
+        }
+
+		$this->load->view('students/view', $data);
 	}
 }
 

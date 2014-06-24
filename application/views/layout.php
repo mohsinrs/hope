@@ -62,6 +62,11 @@
     <script src="<?php echo base_url(); ?>layout/js/plugins/vmap/jquery.vmap.sampledata.js"></script>
     <!-- Bootbox -->
     <script src="<?php echo base_url(); ?>layout/js/plugins/bootbox/jquery.bootbox.js"></script>
+        <!-- Bootbox -->
+    <script src="<?php echo base_url(); ?>layout/js/plugins/form/jquery.form.min.js"></script>
+    <!-- Validation -->
+    <script src="<?php echo base_url(); ?>layout/js/plugins/validation/jquery.validate.min.js"></script>
+    <script src="<?php echo base_url(); ?>layout/js/plugins/validation/additional-methods.min.js"></script>
     <!-- Flot -->
     <script src="<?php echo base_url(); ?>layout/js/plugins/flot/jquery.flot.min.js"></script>
     <script src="<?php echo base_url(); ?>layout/js/plugins/flot/jquery.flot.bar.order.min.js"></script>
@@ -219,11 +224,8 @@
                 </div>
                 <ul class="subnav-menu">
                     <li>
-                        <a href="doctors-spec.html">Doctor Specialities</a>
+                        <a href="/index.php/speciality/index">Specialities</a>
                     </li>
-                    <li>
-                        <a href="student-spec.html">Student Specialities</a>
-                    </li>                   
                 </ul>
             </div>          
         </div>
@@ -241,7 +243,7 @@
                             <i class="icon-angle-right"></i>
                         </li>
                         <li>
-                            <a href="index.html">Dashboard</a>
+                            <a href="/">Dashboard</a>
                         </li>
                     </ul>
                     <div class="close-bread">
