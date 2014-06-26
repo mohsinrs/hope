@@ -2,6 +2,7 @@
 	<div class="span12">
 		<div class="box box-color box-bordered">
             <?php echo $this->session->flashdata('message'); ?>
+            <button class="btn btn-primary"><i class="icon-trash"></i> Delete</button>
 			<div class="box-title">
 				<h3><i class="icon-edit"></i> Students</h3>
 				<div class="actions">
@@ -30,10 +31,10 @@
                                 <td><?php echo $value->Email; ?></td>
                                 <td><?php echo $value->State; ?></td>
                                 <td><?php echo $value->Phone; ?></td>
-                                <td><a href="<?php echo base_url(); ?>index.php/students/view/<?php echo $value->StudentID; ?>">Edit</a></td>
+                                <td><a href="<?php echo base_url(); ?>index.php/students/view/<?php echo $value->StudentID; ?>" class="btn" rel="tooltip" title="" data-original-title="Edit"><i class="icon-edit"></i></a></td>
                             </tr>
                         <?php }
-                    }
+                        }
                     ?>
 				</tbody>
 			</table>

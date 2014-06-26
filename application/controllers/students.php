@@ -4,7 +4,6 @@ class Students extends CI_Controller {
 
     function __construct()
     {
-        // Call the Model constructor
         parent::__construct();
         $this->load->model('Student_model');
     }
@@ -17,10 +16,18 @@ class Students extends CI_Controller {
 		$this->load->view('students/index', $data);
 	}
 
-	public function view($id)
+	public function view($id = NULL)
 	{
-        $data = '';
-		if( $this->input->post('submit') ) {
+        $data = NULL;
+        if( $this->input->post('submit') && $this->input->post('action') == 'edit' ) {
+            $result = $this->Student_model->update($this->input->post(), $id);
+            if($result == true) {
+                $this->session->set_flashdata('message', 'Student updated');
+                redirect('/students/index');
+            } else {
+                $this->session->set_flashdata('message', 'Student can not be updated');
+            }
+        } else if( $this->input->post('submit') && $this->input->post('action') == 'insert' ) {
 			$result = $this->Student_model->insert($this->input->post());
             if($result == true) {
                 $this->session->set_flashdata('message', 'Student added');
@@ -32,7 +39,9 @@ class Students extends CI_Controller {
 
         if(!is_null($id)) {
             $data = $this->Student_model->getOne($id);
-            var_dump($data); exit;
+            if(isset($data[0])) {
+                $data['result'] = $data[0];
+            }
         }
 
 		$this->load->view('students/view', $data);

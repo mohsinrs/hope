@@ -43,13 +43,29 @@ class Student_model extends CI_Model {
         return ($this->db->affected_rows() != 1) ? false : true;
     }
 
-    function update_entry()
+    function update($data, $id)
     {
-        $this->title   = $_POST['title'];
-        $this->content = $_POST['content'];
-        $this->date    = time();
+        $array = array(
+            'Name' => $data['txtName'] ,
+            'Gender' => $data['cmbGender'] ,
+            'GraduationYear' => $data['cmbGraduation'] ,
+            'USMLE1Score' => $data['txtStep1Score'] ,
+            'USMLE2Score' => $data['txtStep2Score'] ,
+            'USMLE2CS' => $data['cmbStep2CS'] ,
+            'PostQual' => $data['txtQualification'] ,
+            'Email' => $data['txtEmail'] ,
+            'State' => $data['cmbState'] ,
+            'City' => $data['txtCity'] ,
+            'Address' => $data['txtAddress'] ,
+            'Phone' => $data['txtPhone'] ,
+            'ContactMethod' => $data['rdoPMC'] ,
+            'IsDeleted' => 0
+        );
 
-        $this->db->update('entries', $this, array('id' => $_POST['id']));
+        $this->db->where('StudentID', $id);
+        $this->db->update('student', $array);
+        //return ($this->db->affected_rows() != 1) ? false : true;
+        return true;
     }
 
 }

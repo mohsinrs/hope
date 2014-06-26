@@ -1,6 +1,7 @@
 <div class="row-fluid">
 	<div class="span12">
 		<div class="box box-color box-bordered">
+            <?php echo $this->session->flashdata('message'); ?>
 			<div class="box-title">
 				<h3><i class="icon-edit"></i> Specialities</h3>
 				<div class="actions">
@@ -19,138 +20,21 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>Trident</td>
-						<td>
-							Internet
-								Explorer 4.0
-						</td>
-						<td class='hidden-350'>Win 95+</td>
-						<td class='hidden-1024'>4</td>
-						<td class='hidden-480'>X</td>
-					</tr>
-					<tr>
-						<td>Presto</td>
-						<td>Nokia N800</td>
-						<td class='hidden-350'>N800</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>A</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>NetFront 3.4</td>
-						<td class='hidden-350'>Embedded devices</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>A</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>Dillo 0.8</td>
-						<td class='hidden-350'>Embedded devices</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>X</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>Links</td>
-						<td class='hidden-350'>Text only</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>X</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>Lynx</td>
-						<td class='hidden-350'>Text only</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>X</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>IE Mobile</td>
-						<td class='hidden-350'>Windows Mobile 6</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>C</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>PSP browser</td>
-						<td class='hidden-350'>PSP</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>C</td>
-					</tr>
-					<tr>
-						<td>Other browsers</td>
-						<td>All others</td>
-						<td class='hidden-350'>-</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>U</td>
-					</tr>
-					<tr>
-						<td>Trident</td>
-						<td>
-							Internet
-								Explorer 4.0
-						</td>
-						<td class='hidden-350'>Win 95+</td>
-						<td class='hidden-1024'>4</td>
-						<td class='hidden-480'>X</td>
-					</tr>
-					<tr>
-						<td>Presto</td>
-						<td>Nokia N800</td>
-						<td class='hidden-350'>N800</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>A</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>NetFront 3.4</td>
-						<td class='hidden-350'>Embedded devices</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>A</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>Dillo 0.8</td>
-						<td class='hidden-350'>Embedded devices</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>X</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>Links</td>
-						<td class='hidden-350'>Text only</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>X</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>Lynx</td>
-						<td class='hidden-350'>Text only</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>X</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>IE Mobile</td>
-						<td class='hidden-350'>Windows Mobile 6</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>C</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>PSP browser</td>
-						<td class='hidden-350'>PSP</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>C</td>
-					</tr>
-					<tr>
-						<td>Other browsers</td>
-						<td>All others</td>
-						<td class='hidden-350'>-</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>U</td>
-					</tr>
+                <?php
+                if(is_array($result)) {
+                    foreach($result as $key => $value) { ?>
+                        <tr>
+                            <td><?php echo $key + 1; ?></td>
+                            <td><?php echo $value->Text; ?></td>
+                            <td><?php echo $value->Type; ?></td>
+                            <td><?php echo $value->IsActive; ?></td>
+                            <td>
+                                <a href="<?php echo base_url(); ?>index.php/speciality/index/<?php echo $value->SpecialityID; ?>" class="btn" rel="tooltip" title="" data-original-title="Delete"><i class="icon-edit"></i></a>
+                            </td>
+                        </tr>
+                    <?php }
+                }
+                ?>
 				</tbody>
 			</table>
 		</div>

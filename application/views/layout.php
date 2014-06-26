@@ -183,9 +183,6 @@
                             <a href="more-userprofile.html">Edit profile</a>
                         </li>
                         <li>
-                            <a href="#">Account settings</a>
-                        </li>
-                        <li>
                             <a href="more-login.html">Sign out</a>
                         </li>
                     </ul>
@@ -239,7 +236,7 @@
                 <div class="breadcrumbs">
                     <ul>
                         <li>
-                            <a href="more-login.html">Home</a>
+                            <a href="/">Home</a>
                             <i class="icon-angle-right"></i>
                         </li>
                         <li>

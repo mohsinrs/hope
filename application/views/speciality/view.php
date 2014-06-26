@@ -1,20 +1,21 @@
 <div class="row-fluid">
 	<div class="span12">
 		<div class="box">
+            <?php echo $this->session->flashdata('message'); ?>
 			<div class="box-title">
 				<h3><i class="icon-edit"></i> Add/Edit Speciality</h3>
 			</div>
 			<div class="box-content nopadding">
-				<form action="#" method="POST" class='form-horizontal form-column form-bordered form-validate' id="frmSpeciality">
+				<form action="" method="POST" class='form-horizontal form-column form-bordered form-validate' id="frmSpeciality">
 					<div class="span6">
 					
 						<div class="control-group">
-							<label for="specialityType" class="control-label">Type</label>
+							<label for="cmbSpecialityType" class="control-label">Type</label>
 							<div class="controls">
-								<select name="specialityType" id="specialityType" class='input-large chosen-select' data-rule-required="true">
+								<select name="cmbSpecialityType" id="cmbSpecialityType" class='input-large chosen-select' data-rule-required="true">
 									<option value="">Select One</option>
-									<option value="1">Doctor</option>
-									<option value="2">Student</option>
+									<option value="Doctor">Doctor</option>
+									<option value="Student">Student</option>
 								</select>
 							</div>
 						</div>
@@ -37,9 +38,9 @@
 					<div class="span6">
 					
 						<div class="control-group">
-							<label for="specialityName" class="control-label">Name</label>
+							<label for="txtName" class="control-label">Name</label>
 							<div class="controls">
-								<input type="text" name="specialityName" id="specialityName" class='input-xlarge required' data-rule-required="true">
+								<input type="text" name="txtName" id="txtName" class='input-xlarge required' data-rule-required="true">
 							</div>
 						</div>
 					
@@ -47,7 +48,7 @@
 					
 					<div class="span12">
 						<div class="form-actions">
-							<button type="submit" class="btn btn-primary">Save</button>
+							<button type="submit" name="submit" value="frmSpecialitySubmit" class="btn btn-primary">Save</button>
 							<button type="button" class="btn">Cancel</button>
 						</div>
 					</div>

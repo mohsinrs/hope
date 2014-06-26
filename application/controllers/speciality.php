@@ -2,28 +2,31 @@
 
 class Speciality extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Speciality_model');
+    }
+
 	public function index()
 	{
-		$this->load->view('speciality/index');
+        $data = array();
+        $data['result'] = $this->Speciality_model->fetchAll();
+
+		$this->load->view('speciality/index', $data);
 	}
 
 	public function view()
 	{
+        if( $this->input->post('submit') ) {
+            $result = $this->Speciality_model->insert($this->input->post());
+            if($result == true) {
+                $this->session->set_flashdata('message', 'Speciality added');
+                redirect('/speciality/index');
+            } else {
+                $this->session->set_flashdata('message', 'Speciality can not be added');
+            }
+        }
 		$this->load->view('speciality/view');
 	}
 }
