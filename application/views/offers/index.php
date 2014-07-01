@@ -1,156 +1,79 @@
 <div class="row-fluid">
 	<div class="span12">
 		<div class="box box-color box-bordered">
+                    <?php echo $this->session->flashdata('message'); ?>
 			<div class="box-title">
 				<h3><i class="icon-edit"></i> Offers</h3>
 				<div class="actions">
-					<a href="/index.php/offers/view" data-toggle="modal" class="btn">
-					<i class="glyphicon-circle_plus"></i> Add Offer</a>
-				</div>
+					
+					
+				
+                                <div class="btn-group">
+                                    <a href="#" data-toggle="dropdown" class="btn dropdown-toggle">
+                                    <i class="glyphicon-circle_plus"></i> Add Offer</a>
+					<ul class="dropdown-menu">
+						<li>
+                                                    <a href="/index.php/offers/electives" data-toggle="modal" class="btn">Add Electives</a>
+						</li>
+						<li>
+                                                    <a href="/index.php/offers/food" data-toggle="modal" class="btn">Add Food</a>
+						</li>
+						
+					</ul>
+				</div></div>
 			</div>
 			<table class="table table-hover table-nomargin dataTable table-bordered">
 				<thead>
 					<tr>
-						<th>Serial #</th>
 						<th>Doctor</th>
-						<th class='hidden-350'>Speciality</th>
-						<th class='hidden-1024'>Vacancies</th>
+						<th>Speciality</th>
+						<th class='hidden-350'>Hospital</th>
+                                                <th class='hidden-350'>Total Students</th>
+                                                <th class='hidden-350'>State</th>
+                                                <th class='hidden-350'>City</th>
+                                                <th class='hidden-1024'>Offer type</th>
 						<th class='hidden-480'>Action</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>Trident</td>
-						<td>
-							Internet
-								Explorer 4.0
-						</td>
-						<td class='hidden-350'>Win 95+</td>
-						<td class='hidden-1024'>4</td>
-						<td class='hidden-480'>X</td>
-					</tr>
-					<tr>
-						<td>Presto</td>
-						<td>Nokia N800</td>
-						<td class='hidden-350'>N800</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>A</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>NetFront 3.4</td>
-						<td class='hidden-350'>Embedded devices</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>A</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>Dillo 0.8</td>
-						<td class='hidden-350'>Embedded devices</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>X</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>Links</td>
-						<td class='hidden-350'>Text only</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>X</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>Lynx</td>
-						<td class='hidden-350'>Text only</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>X</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>IE Mobile</td>
-						<td class='hidden-350'>Windows Mobile 6</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>C</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>PSP browser</td>
-						<td class='hidden-350'>PSP</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>C</td>
-					</tr>
-					<tr>
-						<td>Other browsers</td>
-						<td>All others</td>
-						<td class='hidden-350'>-</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>U</td>
-					</tr>
-					<tr>
-						<td>Trident</td>
-						<td>
-							Internet
-								Explorer 4.0
-						</td>
-						<td class='hidden-350'>Win 95+</td>
-						<td class='hidden-1024'>4</td>
-						<td class='hidden-480'>X</td>
-					</tr>
-					<tr>
-						<td>Presto</td>
-						<td>Nokia N800</td>
-						<td class='hidden-350'>N800</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>A</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>NetFront 3.4</td>
-						<td class='hidden-350'>Embedded devices</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>A</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>Dillo 0.8</td>
-						<td class='hidden-350'>Embedded devices</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>X</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>Links</td>
-						<td class='hidden-350'>Text only</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>X</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>Lynx</td>
-						<td class='hidden-350'>Text only</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>X</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>IE Mobile</td>
-						<td class='hidden-350'>Windows Mobile 6</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>C</td>
-					</tr>
-					<tr>
-						<td>Misc</td>
-						<td>PSP browser</td>
-						<td class='hidden-350'>PSP</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>C</td>
-					</tr>
-					<tr>
-						<td>Other browsers</td>
-						<td>All others</td>
-						<td class='hidden-350'>-</td>
-						<td class='hidden-1024'>-</td>
-						<td class='hidden-480'>U</td>
-					</tr>
+                               <?php 
+                               
+				   if(is_array($result)) {
+                                       
+                                    foreach($result as $key => $value) { ?>
+                            <tr>
+                                
+                                <td><?php echo $value->DoctorID; ?></td>
+                                <td><?php echo $value->SpecialityID; ?></td>
+                                <td><?php echo $value->Hospital; ?></td>
+                                <?php if($value->OfferType == 'rotation') { 
+                                   $total = $value->January + $value->Febuary +$value->March +$value->April +$value->May +$value->June +$value->July +$value->August +$value->September +$value->October +$value->November +$value->December ; 
+                                   ?>
+                                
+                                <td><?php echo $total ?></td>
+                                <?php }
+                                elseif($value->OfferType == 'food') { 
+                                 ?>
+                                <td><?php echo $value->TotalStudent; ?></td>
+                                <?php }
+                                ?>
+                                
+                                <td><?php echo $value->FoodState; ?></td>
+                                <td><?php echo $value->FoodCity; ?></td>
+                                <td><?php echo $value->OfferType; ?></td>
+                                <?php if($value->OfferType == 'rotation') { ?>
+                                <td><a href="<?php echo base_url(); ?>index.php/offers/electives/<?php echo $value->RotationID; ?>" class="btn" rel="tooltip" title="" data-original-title="Edit"><i class="icon-edit"></i></a></td>
+                                <?php } 
+                                elseif($value->OfferType == 'food') { ?>
+                                <td><a href="<?php echo base_url(); ?>index.php/offers/food/<?php echo $value->RotationID; ?>" class="btn" rel="tooltip" title="" data-original-title="Edit"><i class="icon-edit"></i></a></td>
+                                <?php } ?>
+                            </tr>
+                            
+                        <?php
+                        }
+                       }
+                    ?>
+					
 				</tbody>
 			</table>
 		</div>

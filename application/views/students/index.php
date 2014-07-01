@@ -13,7 +13,7 @@
 			<table class="table table-hover table-nomargin dataTable table-bordered">
 				<thead>
 					<tr>
-						<th><input type="checkbox" name="check_all" id="check_all"></th>
+						
 						<th>Name</th>
 						<th>Email</th>
 						<th>State</th>
@@ -26,7 +26,7 @@
                     if(is_array($result)) {
                         foreach($result as $key => $value) { ?>
                             <tr>
-                                <td><input type="checkbox" name="chkAll" value="<?php echo $value->StudentID; ?>"></td>
+                                
                                 <td><?php echo $value->Name; ?></td>
                                 <td><?php echo $value->Email; ?></td>
                                 <td><?php echo $value->State; ?></td>
