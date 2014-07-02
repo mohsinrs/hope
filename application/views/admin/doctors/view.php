@@ -5,22 +5,37 @@
                 <h3><i class="icon-edit"></i> Add/Edit Doctor</h3>
             </div>
             <div class="box-content nopadding">
-                <form action="#" method="POST" class='form-horizontal form-bordered'>
-
-
+                <form action="" method="POST" class='form-horizontal form-bordered form-validate' id="frmDoctor">
+                    <!--
                     <div class="control-group">
                         <label for="txtUserName" class="control-label">User Name</label>
                         <div class="controls">
                             <input type="text" name="txtUserName" id="txtUserName" class='input-xlarge required' value="<?php if (isset($result)) echo $result->UserName; ?>" data-rule-required="true">
                         </div>
                     </div>
+                    -->
                     <div class="control-group">
                         <label for="txtFirstName" class="control-label">First Name</label>
                         <div class="controls">
                             <input type="text" name="txtFirstName" id="txtFirstName" class='input-xlarge required' value="<?php if (isset($result)) echo $result->FirstName; ?>" data-rule-required="true">
                         </div>
                     </div>
-
+                    <div class="control-group">
+                        <label for="txtLastName" class="control-label">Last Name</label>
+                        <div class="controls">
+                            <input type="text" name="txtLastName" id="txtLastName" class='input-xlarge required' value="<?php if (isset($result)) echo $result->LastName; ?>" data-rule-required="true">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="cmbGender" class="control-label">Gender</label>
+                        <div class="controls">
+                            <select name="cmbGender" id="cmbGender" class='input-large chosen-select' data-rule-required="true">
+                                <option value="">Select One</option>
+                                <option value="Male" <?php if (isset($result)) echo $result->Gender == 'Male' ? 'selected' : ''; ?>>Male</option>
+                                <option value="Female" <?php if (isset($result)) echo $result->Gender == 'Female' ? 'selected' : ''; ?>>Female</option>
+                            </select>
+                        </div>
+                    </div>
 
                     <div class="control-group">
                         <label for="txtGraduation" class="control-label">Year of Graduation</label>
@@ -171,12 +186,7 @@
                             <input type="text" name="txtEmail" id="txtEmail" class='input-xlarge required email' value="<?php echo isset($result) ? $result->Email : ''; ?>" data-rule-required="true">
                         </div>
                     </div>
-                    <div class="control-group">
-                        <label for="txtLastName" class="control-label">Last Name</label>
-                        <div class="controls">
-                            <input type="text" name="txtLastName" id="txtLastName" class='input-xlarge required' value="<?php if (isset($result)) echo $result->LastName; ?>" data-rule-required="true">
-                        </div>
-                    </div>
+
                     <div class="control-group">
                         <label for="txtAddress" class="control-label">Address</label>
                         <div class="controls">

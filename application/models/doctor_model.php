@@ -1,5 +1,5 @@
 <?php
-class Docter_model extends CI_Model {
+class Doctor_model extends CI_Model {
 
     function __construct()
     {
@@ -8,15 +8,15 @@ class Docter_model extends CI_Model {
     }
      function fetchAll()
     {
-        $query = $this->db->get_where('docter', array('IsDeleted' => 0), NULL, NULL);
+        $query = $this->db->get_where('doctor', array('IsDeleted' => 0), NULL, NULL);
         return $query->result();
     }
      function getOne($id)
     {
-        $query = $this->db->get_where('docter', array('DocterID' => $id, 'IsDeleted' => 0), NULL, NULL);
+        $query = $this->db->get_where('doctor', array('DoctorID' => $id, 'IsDeleted' => 0), NULL, NULL);
         return $query->result();
     }
-    function insertDocter($data)
+    function insertDoctor($data)
     {
         $array = array(
             'UserName' => $data['txtUserName'] ,
@@ -38,12 +38,10 @@ class Docter_model extends CI_Model {
             'Speciality' => $data['cmbSpeciality'] ,
             'PracticeType' => $data['cmbPracticeType'] ,
             'MemberType' => $data['cmbMemberType'] ,
-            'IsDeleted' => 0 ,
-            
-            
+            'IsDeleted' => 0
         );
 
-        $this->db->insert('docter', $array);
+        $this->db->insert('doctor', $array);
         return ($this->db->affected_rows() != 1) ? false : true;
     }
     
@@ -69,12 +67,11 @@ class Docter_model extends CI_Model {
             'Speciality' => $data['cmbSpeciality'] ,
             'PracticeType' => $data['cmbPracticeType'] ,
             'MemberType' => $data['cmbMemberType'] ,
-            'IsDeleted' => 0 ,
-            
+            'IsDeleted' => 0
         );
 
-        $this->db->where('DocterID', $id);
-        $this->db->update('docter', $array);
+        $this->db->where('DoctorID', $id);
+        $this->db->update('doctor', $array);
         //return ($this->db->affected_rows() != 1) ? false : true;
         return true;
     }

@@ -27,7 +27,6 @@ class Index extends Base_Controller {
         if (!$result) {
             $msg = 'Invalid User name or Password';
             $data['msg'] = $msg;
-            exit($msg);
             redirect(base_url('admin/index', $data));
         } else {
             redirect(base_url('admin/dashboard'));

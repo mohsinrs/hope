@@ -10,10 +10,10 @@ class Dashboard extends Base_Controller {
     }
 
     public function index() {
-        
+
+        $data = array();
         $layout['title'] = "Dashboard";
-        $view = '';
-        $this->render('admin/dashboard/index', $view, $layout);
+        $this->render('admin/dashboard/index', $data, $layout);
     }
 
     function logout() 

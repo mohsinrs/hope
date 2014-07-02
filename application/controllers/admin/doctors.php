@@ -5,13 +5,13 @@ class Doctors extends Base_Controller {
      function __construct()
     {
         parent::__construct();
-        $this->load->model('Docter_model');
+        $this->load->model('Doctor_model');
     }
 	public function index()
 	{
         $data = array();
         $layout['title'] = "Doctors";
-        $data['result'] = $this->Docter_model->fetchAll();
+        $data['result'] = $this->Doctor_model->fetchAll();
         $this->render('admin/doctors/index', $data, $layout);
 	}
 
@@ -20,15 +20,15 @@ class Doctors extends Base_Controller {
         $data = NULL;
         if( $this->input->post('submit') && $this->input->post('action') == 'edit' ) {
            
-            $result = $this->Docter_model->update($this->input->post(), $id);
+            $result = $this->Doctor_model->update($this->input->post(), $id);
             if($result == true) {
                 $this->session->set_flashdata('message', 'Doctor updated');
                 redirect('/admin/doctors/index');
             } else {
-                $this->session->set_flashdata('message', 'Docter can not be updated');
+                $this->session->set_flashdata('message', 'Doctor can not be updated');
             }
         } else if( $this->input->post('submit') && $this->input->post('action') == 'insert' ) {
-			$result = $this->Docter_model->insertDocter($this->input->post());
+			$result = $this->Doctor_model->insertDoctor($this->input->post());
             if($result == true) {
                 $this->session->set_flashdata('message', 'Doctor added');
                 redirect('/admin/doctors/index');
@@ -38,7 +38,7 @@ class Doctors extends Base_Controller {
 
         }
             if(!is_null($id)) {
-            $data = $this->Docter_model->getOne($id);
+            $data = $this->Doctor_model->getOne($id);
             if(isset($data[0])) {
                 $data['result'] = $data[0];
             }

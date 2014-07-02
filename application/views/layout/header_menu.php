@@ -110,7 +110,7 @@
                 </li>                
             </ul>
             <div class="dropdown">
-                <a href="#" class='dropdown-toggle' data-toggle="dropdown">John Doe <img src="<?php echo base_url(); ?>public/admin/img/demo/user-avatar.jpg" alt=""></a>
+                <a href="#" class='dropdown-toggle' data-toggle="dropdown"><?php echo $admin->Name; ?> <img src="<?php echo base_url(); ?>public/admin/img/demo/user-avatar.jpg" alt=""></a>
                 <ul class="dropdown-menu pull-right">
                     <li>
                         <a href="<?php echo base_url('admin/index/logout'); ?>">Edit profile</a>

@@ -11,7 +11,7 @@
 			<table class="table table-hover table-nomargin dataTable table-bordered">
 				<thead>
 					<tr>
-						<th>UserName</th>
+						<th>Full Name</th>
 						<th>Qualification</th>
 						<th class='hidden-350'>Email</th>
 						<th class='hidden-1024'>State</th>
@@ -24,13 +24,12 @@
                     if(is_array($result)) {
                         foreach($result as $key => $value) { ?>
                             <tr>
-                                
-                                <td><?php echo $value->UserName; ?></td>
+                                <td><?php echo $value->FirstName.' '.$value->LastName; ?></td>
                                 <td><?php echo $value->Qualification; ?></td>
                                 <td><?php echo $value->Email; ?></td>
                                 <td><?php echo $value->State; ?></td>
                                 <td><?php echo $value->Speciality; ?></td>
-                                <td><a href="<?php echo base_url('admin/doctors/view/'.$value->DocterID); ?>" class="btn" rel="tooltip" title="" data-original-title="Edit"><i class="icon-edit"></i></a></td>
+                                <td><a href="<?php echo base_url('admin/doctors/view/'.$value->DoctorID); ?>" class="btn" rel="tooltip" title="" data-original-title="Edit"><i class="icon-edit"></i></a></td>
                             </tr>
                     <?php }
                     }
