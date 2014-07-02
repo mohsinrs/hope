@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://hope.dev/';
+$config['base_url']	= '';
 
 /*
 |--------------------------------------------------------------------------
@@ -91,7 +91,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = TRUE;
+$config['enable_hooks'] = FALSE;
 
 
 /*
@@ -106,7 +106,7 @@ $config['enable_hooks'] = TRUE;
 | http://codeigniter.com/user_guide/general/creating_libraries.html
 |
 */
-$config['subclass_prefix'] = 'MY_';
+$config['subclass_prefix'] = 'Base_';
 
 
 /*
@@ -126,7 +126,7 @@ $config['subclass_prefix'] = 'MY_';
 | DO NOT CHANGE THIS UNLESS YOU FULLY UNDERSTAND THE REPERCUSSIONS!!
 |
 */
-$config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
+$config['permitted_uri_chars'] = 'a-z 0-9~%.:_()@&\-!';
 
 
 /*
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'APANtByIGI1BpVXZTJgcsAG8GZl8pdwwa84';
+$config['encryption_key'] = 'howareyou';
 
 /*
 |--------------------------------------------------------------------------
@@ -356,6 +356,11 @@ $config['rewrite_short_tags'] = FALSE;
 |
 */
 $config['proxy_ips'] = '';
+
+$config['limit_per_page'] = 10;
+
+$config['trackerAcl'] =TRUE;
+
 
 
 /* End of file config.php */

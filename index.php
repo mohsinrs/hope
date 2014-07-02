@@ -19,6 +19,8 @@
  *
  */
 	define('ENVIRONMENT', 'development');
+        define('ROOT_PATH', str_replace('\\', '/', realpath(dirname(__FILE__))));
+       
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
@@ -72,7 +74,7 @@ if (defined('ENVIRONMENT'))
  * NO TRAILING SLASH!
  *
  */
-	$application_folder = 'application';
+	$application_folder = "application";
 
 /*
  * --------------------------------------------------------------------

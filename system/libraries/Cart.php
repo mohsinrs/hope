@@ -6,7 +6,7 @@
  *
  * @package		CodeIgniter
  * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2006 - 2014, EllisLab, Inc.
+ * @copyright	Copyright (c) 2006 - 2012, EllisLab, Inc.
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.0
@@ -183,11 +183,11 @@ class CI_Cart {
 
 		// Validate the product name. It can only be alpha-numeric, dashes, underscores, colons or periods.
 		// Note: These can be user-specified by setting the $this->product_name_rules variable.
-		if ( ! preg_match("/^[".$this->product_name_rules."]+$/i", $items['name']))
-		{
-			log_message('error', 'An invalid name was submitted as the product name: '.$items['name'].' The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces');
-			return FALSE;
-		}
+//		if ( ! preg_match("/^[".$this->product_name_rules."]+$/i", $items['name']))
+//		{
+//			log_message('error', 'An invalid name was submitted as the product name: '.$items['name'].' The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces');
+//			return FALSE;
+//		}
 
 		// --------------------------------------------------------------------
 
@@ -546,6 +546,7 @@ class CI_Cart {
 
 
 }
+// END Cart Class
 
 /* End of file Cart.php */
 /* Location: ./system/libraries/Cart.php */
