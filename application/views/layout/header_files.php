@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="<?php echo base_url('/public/admin/css/plugins/icheck/all.css') ?>">
 <!-- Theme CSS -->
 <link rel="stylesheet" href="<?php echo base_url('/public/admin/css/style.css') ?>">
+<link rel="stylesheet" href="<?php echo base_url('/public/admin/css/global.css') ?>">
 <!-- Color CSS -->
 <link rel="stylesheet" href="<?php echo base_url('/public/admin/css/themes.css') ?>">
 
@@ -39,6 +40,7 @@
 <script src="<?php echo base_url('/public/admin/js/plugins/jquery-ui/jquery.ui.draggable.min.js') ?>"></script>
 <script src="<?php echo base_url('/public/admin/js/plugins/jquery-ui/jquery.ui.resizable.min.js') ?>"></script>
 <script src="<?php echo base_url('/public/admin/js/plugins/jquery-ui/jquery.ui.sortable.min.js') ?>"></script>
+<script src="<?php echo base_url('/public/admin/js/plugins/jquery-ui/jquery.ui.spinner.js') ?>"></script>
 <!-- Touch enable for jquery UI -->
 <script src="<?php echo base_url('/public/admin/js/plugins/touch-punch/jquery.touch-punch.min.js') ?>"></script>
 <!-- slimScroll -->

@@ -1,5 +1,4 @@
 <?php
-
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
@@ -7,18 +6,16 @@ class Login_model extends CI_Model {
 
     function __construct() {
         parent::__construct();
-        
     }
 
     public function validate() {
-
         $email = $this->input->post('email');
         $this->input->post('password');
         $password = md5($this->input->post('password'));
         if(!empty($email) && !empty($password))
         {
             if($this->input->post('remember') == false)
-               $remember_me = false;
+                $remember_me = false;
             else
                 $remember_me = true;
 
@@ -48,6 +45,36 @@ class Login_model extends CI_Model {
         } else {
             return false;
         }
+    }
+    
+    
+    public function validateConsultant(){
+        {
+
+        $email = $this->input->post('email');
+        $this->input->post('password');
+        $password = md5($this->input->post('password'));
+        if(!empty($email) && !empty($password))
+        {
+            $this->db->select('*');
+            $this->db->from('doctor');
+            $this->db->where('email', $email);
+            $this->db->where('password', ($password));
+            //$this->db->where('is_delete','n');
+            $this->db->limit(1);
+            $query = $this->db->get();
+           
+            if ($query->num_rows() == 1) {
+                $row = $query->row();
+                $this->session->set_userdata('consultant', $row);
+                return true;
+            }
+            return false;
+
+        } else {
+            return false;
+        }
+    }
     }
 
 }

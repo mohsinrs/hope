@@ -8,7 +8,7 @@
         <!-- Apple devices fullscreen -->
         <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-        <title>FLAT - Login</title>
+        <title>HOPE - Login</title>
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="<?php echo base_url('public/admin/css/bootstrap.min.css') ?>">
@@ -55,13 +55,14 @@
 
     <body class='login'>
         <div class="wrapper">
-            <h1><a href="#"><img src="<?php echo base_url('public/admin/img/logo-big.png') ?>" alt="" class='retina-ready' width="59" height="49">FLAT</a></h1>
+            <h1><a href="#"><img src="<?php echo base_url('public/admin/img/logo-big.png') ?>" alt="" class='retina-ready' width="59" height="49">HOPE</a></h1>
             <div class="login-body">
                 <h2>SIGN IN</h2>
+                <?php echo renderNotification() ?>
                 <form action="<?php echo base_url('admin/index/process') ?>" method='post' class='form-validate' id="frmLogin">
                     <div class="control-group">
                         <div class="email controls">
-                            <input type="text" name='email' placeholder="Email address" class='input-block-level' data-rule-required="true" data-rule-email="true">
+                            <input type="text" name='email' placeholder="User Name" class='input-block-level' data-rule-required="true">
                         </div>
                     </div>
                     <div class="control-group">
@@ -77,7 +78,7 @@
                     </div>
                 </form>
                 <div class="forget">
-                    <a href="#"><span>Forgot password?</span></a>
+                    <a href="<?php echo base_url('admin/index/forgot') ?>"><span>Forgot password?</span></a>
                 </div>
             </div>
         </div>

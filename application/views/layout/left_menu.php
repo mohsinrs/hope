@@ -13,20 +13,49 @@
         </div>
         <ul class="subnav-menu">
             <li>
-                <a href="<?php echo base_url('admin/doctors/index'); ?>">Doctors</a>
+                <a href="<?php echo base_url('admin/doctors/index'); ?>">Consultant/Guidance </a>
             </li>
             <li>
-                <a href="<?php echo base_url('admin/students/index'); ?>">Students</a>
+                <a href="<?php echo base_url('admin/students/index'); ?>">Graduates</a>
             </li>
-            <li>
-                <a href="<?php echo base_url('admin/offers/index'); ?>">Offers</a>
-            </li>
+
             <li>
                 <a href="<?php echo base_url('admin/speciality/index'); ?>">Speciality</a>
             </li>
+        </ul>
+    </div>
+    <div class="subnav">
+        <div class="subnav-title">
+            <a href="#" class='toggle-subnav'><i class="icon-angle-down"></i><span>Offers</span></a>
+        </div>
+        <ul class="subnav-menu">
             <li>
-                <a href="<?php echo base_url('admin/attachment/index'); ?>">Attachment</a>
+                <a href="<?php echo base_url('admin/offer/rotation'); ?>">Rotation</a>
+            </li>
+            <li>
+                <a href="<?php echo base_url('admin/offer/foodAll'); ?>">Lodging</a>
+            </li>
+            <li>
+                <a href="<?php echo base_url('admin/offer/consultant'); ?>">Consultation</a>
+            </li>
+            <li>
+                <a href="<?php echo base_url('admin/offer/researchAll'); ?>">Research</a>
             </li>
         </ul>
     </div>
+
+    <div class="subnav">
+        <div class="subnav-title">
+            <a href="#" class='toggle-subnav'><i class="icon-angle-down"></i><span>Match</span></a>
+        </div>
+        <ul class="subnav-menu">
+            <li>
+                <a href="<?php echo base_url('admin/attachment/allMatch'); ?>">Match Log</a>
+            </li>
+        </ul>
+    </div>
+
+
+
+
 </div>

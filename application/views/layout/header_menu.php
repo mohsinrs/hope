@@ -1,6 +1,6 @@
 <div id="navigation">
     <div class="container-fluid">
-        <a href="#" id="brand">FLAT</a>
+        <a href="#" id="brand">HOPE</a>
         <a href="#" class="toggle-nav" rel="tooltip" data-placement="bottom" title="Toggle navigation"><i class="icon-reorder"></i></a>
         <ul class='main-nav'>
             <li class='active'>
@@ -11,51 +11,7 @@
         </ul>
         <div class="user">
             <ul class="icon-nav">
-                <li class='dropdown'>
-                    <a href="#" class='dropdown-toggle' data-toggle="dropdown"><i class="icon-envelope"></i><span class="label label-lightred">4</span></a>
-                    <ul class="dropdown-menu pull-right message-ul">
-                        <li>
-                            <a href="#">
-                                <img src="<?php echo base_url('public/admin/img/demo/user-1.jpg'); ?>" alt="">
-                                <div class="details">
-                                    <div class="name">Jane Doe</div>
-                                    <div class="message">
-                                        Lorem ipsum Commodo quis nisi ...
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="<?php echo base_url('public/admin/img/demo/user-2.jpg'); ?>" alt="">
-                                <div class="details">
-                                    <div class="name">John Doedoe</div>
-                                    <div class="message">
-                                        Ut ad laboris est anim ut ...
-                                    </div>
-                                </div>
-                                <div class="count">
-                                    <i class="icon-comment"></i>
-                                    <span>3</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="<?php echo base_url('public/admin/img/demo/user-3.jpg'); ?>" alt="">
-                                <div class="details">
-                                    <div class="name">Bob Doe</div>
-                                    <div class="message">
-                                        Excepteur Duis magna dolor!
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-messages.html" class='more-messages'>Go to Message center <i class="icon-arrow-right"></i></a>
-                        </li>
-                    </ul>
-                </li>
+                
                 <li class="dropdown sett">
                     <a href="#" class='dropdown-toggle' data-toggle="dropdown"><i class="icon-cog"></i></a>
                     <ul class="dropdown-menu pull-right theme-settings">
@@ -110,11 +66,11 @@
                 </li>                
             </ul>
             <div class="dropdown">
-                <a href="#" class='dropdown-toggle' data-toggle="dropdown"><?php echo $admin->Name; ?> <img src="<?php echo base_url(); ?>public/admin/img/demo/user-avatar.jpg" alt=""></a>
+                <a href="#" class='dropdown-toggle' data-toggle="dropdown"><?php // echo $admin->Name; ?> <img width="30px" height="20px" src="<?php echo base_url(); ?>public/admin/img/demo/logo-pic.jpg" alt=""></a>
                 <ul class="dropdown-menu pull-right">
-                    <li>
-                        <a href="<?php echo base_url('admin/index/logout'); ?>">Edit profile</a>
-                    </li>
+<!--                    <li>
+                        <a href="<?php //echo base_url('admin/index/logout'); ?>">Edit profile</a>
+                    </li>-->
                     <li>
                         <a href="<?php echo base_url('admin/index/logout'); ?>">Sign out</a>
                     </li>

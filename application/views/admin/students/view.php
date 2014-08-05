@@ -1,31 +1,43 @@
 <div class="row-fluid">
     <div class="span12">
+        <?php renderNotification() ?>
         <div class="box box-bordered">
             <div class="box-title">
-                <h3><i class="icon-th-list"></i> Add/Edit Student</h3>
+                <h3><i class="icon-edit"></i> Add/Edit Graduate</h3>
             </div>
             <div class="box-content nopadding">
-                <form action="#" method="POST" class='form-horizontal form-bordered'>
+                <form action="" method="POST" class='form-horizontal form-bordered form-validate' id="frmStudent">
                     <div class="control-group">
-                        <label for="txtName" class="control-label">Full Name</label>
+                        <label for="txtFirstName" class="control-label">First Name</label>
                         <div class="controls">
-                            <input type="text" name="txtName" id="txtName" class='input-xlarge required' value="<?php if (isset($result)) echo $result->Name; ?>" data-rule-required="true">
+                            <input type="text" name="txtFirstName" id="txtFirstName" class='input-xlarge required' value="<?php if (isset($result)) echo $result->FirstName; ?>" data-rule-required="true">
                         </div>
                     </div>
                     <div class="control-group">
-                        <label for="cmbGender" class="control-label">Gender</label>
+                        <label for="txtLastName" class="control-label">Last Name</label>
                         <div class="controls">
-                            <select name="cmbGender" id="cmbGender" class='input-large chosen-select' data-rule-required="true">
-                                <option value="">Select One</option>
-                                <option value="Male" <?php if (isset($result)) echo $result->Gender == 'Male' ? 'selected' : ''; ?>>Male</option>
-                                <option value="Female" <?php if (isset($result)) echo $result->Gender == 'Female' ? 'selected' : ''; ?>>Female</option>
-                            </select>
+                            <input type="text" name="txtLastName" id="txtLastName" class='input-xlarge required' value="<?php if (isset($result)) echo $result->LastName; ?>" data-rule-required="true">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="rdoGender" class="control-label">Gender</label>
+                        <div class="controls">
+                            <div class="check-demo-col">
+                                <div class="check-line">
+                                    <input type="radio" id="Male" class='icheck-me' name="rdoGender" value="Male" data-skin="square" data-color="blue" checked>
+                                    <label class='inline' for="Male">Male</label>
+                                </div>
+                                <div class="check-line">
+                                    <input type="radio" id="Female" class='icheck-me' name="rdoGender" value="Female" data-skin="square" data-color="blue">
+                                    <label class='inline' for="Female">Female</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="control-group">
                         <label for="cmbGraduation" class="control-label">Year of Graduation</label>
                         <div class="controls">
-                            <select name="cmbGraduation" id="cmbGraduation" class='input-large chosen-select' data-rule-required="true">
+                            <select name="cmbGraduation" id="cmbGraduation" class='input-large required' data-rule-required="true">
                                 <option value="">Select One</option>
                                 <option value="2014" <?php if (isset($result)) echo $result->GraduationYear == '2014' ? 'selected' : ''; ?>>2014</option>
                                 <option value="2013" <?php if (isset($result)) echo $result->GraduationYear == '2013' ? 'selected' : ''; ?>>2013</option>
@@ -37,7 +49,6 @@
                                 <option value="2007" <?php if (isset($result)) echo $result->GraduationYear == '2007' ? 'selected' : ''; ?>>2007</option>
                                 <option value="2006" <?php if (isset($result)) echo $result->GraduationYear == '2006' ? 'selected' : ''; ?>>2006</option>
                                 <option value="2005" <?php if (isset($result)) echo $result->GraduationYear == '2005' ? 'selected' : ''; ?>>2005</option>
-                                
                                 <option value="2004" <?php if (isset($result)) echo $result->GraduationYear == '2004' ? 'selected' : ''; ?>>2004</option>
                                 <option value="2003" <?php if (isset($result)) echo $result->GraduationYear == '2003' ? 'selected' : ''; ?>>2003</option>
                                 <option value="2002" <?php if (isset($result)) echo $result->GraduationYear == '2002' ? 'selected' : ''; ?>>2002</option>
@@ -48,12 +59,10 @@
                                 <option value="1997" <?php if (isset($result)) echo $result->GraduationYear == '1998' ? 'selected' : ''; ?>>1997</option>
                                 <option value="1996" <?php if (isset($result)) echo $result->GraduationYear == '1997' ? 'selected' : ''; ?>>1996</option>
                                 <option value="1995" <?php if (isset($result)) echo $result->GraduationYear == '1996' ? 'selected' : ''; ?>>1995</option>
-                                
                                 <option value="1994" <?php if (isset($result)) echo $result->GraduationYear == '1994' ? 'selected' : ''; ?>>1994</option>
                                 <option value="1993" <?php if (isset($result)) echo $result->GraduationYear == '1993' ? 'selected' : ''; ?>>1993</option>
                                 <option value="1992" <?php if (isset($result)) echo $result->GraduationYear == '1992' ? 'selected' : ''; ?>>1992</option>
                                 <option value="1991" <?php if (isset($result)) echo $result->GraduationYear == '1991' ? 'selected' : ''; ?>>1991</option>
-                                
                                 <option value="1990" <?php if (isset($result)) echo $result->GraduationYear == '1990' ? 'selected' : ''; ?>>1990</option>
                                 <option value="1989" <?php if (isset($result)) echo $result->GraduationYear == '1989' ? 'selected' : ''; ?>>1989</option>
                                 <option value="1988" <?php if (isset($result)) echo $result->GraduationYear == '1988' ? 'selected' : ''; ?>>1988</option>
@@ -64,9 +73,6 @@
                                 <option value="1983" <?php if (isset($result)) echo $result->GraduationYear == '1983' ? 'selected' : ''; ?>>1983</option>
                                 <option value="1982" <?php if (isset($result)) echo $result->GraduationYear == '1982' ? 'selected' : ''; ?>>1982</option>
                                 <option value="1981" <?php if (isset($result)) echo $result->GraduationYear == '1981' ? 'selected' : ''; ?>>1981</option>
-                                
-                                
-                                
                                 <option value="1980" <?php if (isset($result)) echo $result->GraduationYear == '1980' ? 'selected' : ''; ?>>1980</option>
                                 <option value="1979" <?php if (isset($result)) echo $result->GraduationYear == '1979' ? 'selected' : ''; ?>>1979</option>
                                 <option value="1978" <?php if (isset($result)) echo $result->GraduationYear == '1978' ? 'selected' : ''; ?>>1978</option>
@@ -112,9 +118,20 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label for="txtStep1Score" class="control-label">USMLE Step 1 Score</label>
-                         <div class="controls">
-                            <select name="txtStep1Score" id="txtStep1Score" class='input-large chosen-select' data-rule-required="true">
+                        <label for="chkUSMLE" class="control-label">Have attended USMLE?</label>
+                        <div class="controls">
+                            <div class="check-demo-col">
+                                <div class="check-line">
+                                    <input type="checkbox" id="chkUSMLE" name="chkUSMLE" class='icheck-me' data-skin="square" data-color="blue">
+                                    <label class='inline' for="chkUSMLE">Check if attended USMLE</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group usmle hide">
+                        <label for="cmbUSMLE1" class="control-label">USMLE Step 1 Score</label>
+                        <div class="controls">
+                            <select name="cmbUSMLE1" id="cmbUSMLE1" class='input-large required' data-rule-required="true">
                                 <option value="">Select One</option>
                                 <option value="100" <?php if (isset($result)) echo $result->USMLE1Score == '100' ? 'selected' : ''; ?>>100</option>
                                 <option value="99" <?php if (isset($result)) echo $result->USMLE1Score == '99' ? 'selected' : ''; ?>>99</option>
@@ -167,77 +184,89 @@
                                 <option value="52" <?php if (isset($result)) echo $result->USMLE1Score == '52' ? 'selected' : ''; ?>>52</option>
                                 <option value="51" <?php if (isset($result)) echo $result->USMLE1Score == '51' ? 'selected' : ''; ?>>51</option>
                                 <option value="50" <?php if (isset($result)) echo $result->USMLE1Score == '50' ? 'selected' : ''; ?>>50</option>
-                                
                             </select>
                         </div>
                     </div>
-                    <div class="control-group">
-                        <label for="txtStep2Score" class="control-label">USMLE Step 2 Score</label>
-                          <div class="controls">
-                            <select name="txtStep2Score" id="txtStep2Score" class='input-large chosen-select' data-rule-required="true">
-                                <option value="">Select One</option>
-                                <option value="100" <?php if (isset($result)) echo $result->USMLE2Score == '100' ? 'selected' : ''; ?>>100</option>
-                                 <option value="99" <?php if (isset($result)) echo $result->USMLE2Score == '99' ? 'selected' : ''; ?>>99</option>
-                                <option value="98" <?php if (isset($result)) echo $result->USMLE2Score == '98' ? 'selected' : ''; ?>>98</option>
-                                <option value="97" <?php if (isset($result)) echo $result->USMLE2Score == '97' ? 'selected' : ''; ?>>97</option>
-                                <option value="96" <?php if (isset($result)) echo $result->USMLE2Score == '96' ? 'selected' : ''; ?>>96</option>
-                                <option value="95" <?php if (isset($result)) echo $result->USMLE2Score == '95' ? 'selected' : ''; ?>>95</option>
-                                <option value="94" <?php if (isset($result)) echo $result->USMLE2Score == '94' ? 'selected' : ''; ?>>94</option>
-                                <option value="93" <?php if (isset($result)) echo $result->USMLE2Score == '93' ? 'selected' : ''; ?>>93</option>
-                                <option value="92" <?php if (isset($result)) echo $result->USMLE2Score == '92' ? 'selected' : ''; ?>>92</option>
-                                <option value="91" <?php if (isset($result)) echo $result->USMLE2Score == '91' ? 'selected' : ''; ?>>91</option>
-                                <option value="90" <?php if (isset($result)) echo $result->USMLE2Score == '90' ? 'selected' : ''; ?>>90</option>
-                                <option value="89" <?php if (isset($result)) echo $result->USMLE2Score == '89' ? 'selected' : ''; ?>>89</option>
-                                <option value="88" <?php if (isset($result)) echo $result->USMLE2Score == '88' ? 'selected' : ''; ?>>88</option>
-                                <option value="87" <?php if (isset($result)) echo $result->USMLE2Score == '87' ? 'selected' : ''; ?>>87</option>
-                                <option value="86" <?php if (isset($result)) echo $result->USMLE2Score == '86' ? 'selected' : ''; ?>>86</option>
-                                <option value="85" <?php if (isset($result)) echo $result->USMLE2Score == '85' ? 'selected' : ''; ?>>85</option>
-                                <option value="84" <?php if (isset($result)) echo $result->USMLE2Score == '84' ? 'selected' : ''; ?>>84</option>
-                                <option value="83" <?php if (isset($result)) echo $result->USMLE2Score == '83' ? 'selected' : ''; ?>>83</option>
-                                <option value="82" <?php if (isset($result)) echo $result->USMLE2Score == '82' ? 'selected' : ''; ?>>82</option>
-                                <option value="81" <?php if (isset($result)) echo $result->USMLE2Score == '81' ? 'selected' : ''; ?>>81</option>
-                                <option value="80" <?php if (isset($result)) echo $result->USMLE2Score == '80' ? 'selected' : ''; ?>>80</option>
-                                <option value="79" <?php if (isset($result)) echo $result->USMLE2Score == '79' ? 'selected' : ''; ?>>79</option>
-                                <option value="78" <?php if (isset($result)) echo $result->USMLE2Score == '78' ? 'selected' : ''; ?>>78</option>
-                                <option value="77" <?php if (isset($result)) echo $result->USMLE2Score == '77' ? 'selected' : ''; ?>>77</option>
-                                <option value="76" <?php if (isset($result)) echo $result->USMLE2Score == '76' ? 'selected' : ''; ?>>76</option>
-                                <option value="75" <?php if (isset($result)) echo $result->USMLE2Score == '75' ? 'selected' : ''; ?>>75</option>
-                                <option value="74" <?php if (isset($result)) echo $result->USMLE2Score == '74' ? 'selected' : ''; ?>>74</option>
-                                <option value="73" <?php if (isset($result)) echo $result->USMLE2Score == '73' ? 'selected' : ''; ?>>73</option>
-                                <option value="72" <?php if (isset($result)) echo $result->USMLE2Score == '72' ? 'selected' : ''; ?>>72</option>
-                                <option value="71" <?php if (isset($result)) echo $result->USMLE2Score == '71' ? 'selected' : ''; ?>>71</option>
-                                <option value="70" <?php if (isset($result)) echo $result->USMLE2Score == '70' ? 'selected' : ''; ?>>70</option>
-                                <option value="69" <?php if (isset($result)) echo $result->USMLE2Score == '69' ? 'selected' : ''; ?>>69</option>
-                                <option value="68" <?php if (isset($result)) echo $result->USMLE2Score == '68' ? 'selected' : ''; ?>>68</option>
-                                <option value="67" <?php if (isset($result)) echo $result->USMLE2Score == '67' ? 'selected' : ''; ?>>67</option>
-                                <option value="66" <?php if (isset($result)) echo $result->USMLE2Score == '66' ? 'selected' : ''; ?>>66</option>
-                                <option value="65" <?php if (isset($result)) echo $result->USMLE2Score == '65' ? 'selected' : ''; ?>>65</option>
-                                <option value="64" <?php if (isset($result)) echo $result->USMLE2Score == '64' ? 'selected' : ''; ?>>64</option>
-                                <option value="63" <?php if (isset($result)) echo $result->USMLE2Score == '63' ? 'selected' : ''; ?>>63</option>
-                                <option value="62" <?php if (isset($result)) echo $result->USMLE2Score == '62' ? 'selected' : ''; ?>>62</option>
-                                <option value="61" <?php if (isset($result)) echo $result->USMLE2Score == '61' ? 'selected' : ''; ?>>61</option>
-                                <option value="60" <?php if (isset($result)) echo $result->USMLE2Score == '60' ? 'selected' : ''; ?>>60</option>
-                                <option value="59" <?php if (isset($result)) echo $result->USMLE2Score == '59' ? 'selected' : ''; ?>>59</option>
-                                <option value="58" <?php if (isset($result)) echo $result->USMLE2Score == '58' ? 'selected' : ''; ?>>58</option>
-                                <option value="57" <?php if (isset($result)) echo $result->USMLE2Score == '57' ? 'selected' : ''; ?>>57</option>
-                                <option value="56" <?php if (isset($result)) echo $result->USMLE2Score == '56' ? 'selected' : ''; ?>>56</option>
-                                <option value="55" <?php if (isset($result)) echo $result->USMLE2Score == '55' ? 'selected' : ''; ?>>55</option>
-                                <option value="54" <?php if (isset($result)) echo $result->USMLE2Score == '54' ? 'selected' : ''; ?>>54</option>
-                                <option value="53" <?php if (isset($result)) echo $result->USMLE2Score == '53' ? 'selected' : ''; ?>>53</option>
-                                <option value="52" <?php if (isset($result)) echo $result->USMLE2Score == '52' ? 'selected' : ''; ?>>52</option>
-                                <option value="51" <?php if (isset($result)) echo $result->USMLE2Score == '51' ? 'selected' : ''; ?>>51</option>
-                                <option value="50" <?php if (isset($result)) echo $result->USMLE2Score == '50' ? 'selected' : ''; ?>>50</option>
-                                
-                            </select>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label for="cmbStep2CS" class="control-label">USMLE STEP 2 CS</label>
+                    <div class="control-group usmle hide">
+                        <label for="cmbUSMLE2" class="control-label">USMLE Step 2 Score</label>
                         <div class="controls">
-                            <select name="cmbStep2CS" id="cmbStep2CS" class='input-large chosen-select' data-rule-required="true">
+                            <select name="cmbUSMLE2" id="cmbUSMLE2" class='input-large required' data-rule-required="true">
                                 <option value="">Select One</option>
-                                <option value="1" <?php if (isset($result)) echo $result->USMLE2CS == '1' ? 'selected' : ''; ?>>Passed in first attempt</option>
-                                <option value="0" <?php if (isset($result)) echo $result->USMLE2CS == '0' ? 'selected' : ''; ?>>Passed in more than one attempts</option>
+                                <option value="100" <?php if (isset($result)) echo $result->USMLE1Score == '100' ? 'selected' : ''; ?>>100</option>
+                                <option value="99" <?php if (isset($result)) echo $result->USMLE1Score == '99' ? 'selected' : ''; ?>>99</option>
+                                <option value="98" <?php if (isset($result)) echo $result->USMLE1Score == '98' ? 'selected' : ''; ?>>98</option>
+                                <option value="97" <?php if (isset($result)) echo $result->USMLE1Score == '97' ? 'selected' : ''; ?>>97</option>
+                                <option value="96" <?php if (isset($result)) echo $result->USMLE1Score == '96' ? 'selected' : ''; ?>>96</option>
+                                <option value="95" <?php if (isset($result)) echo $result->USMLE1Score == '95' ? 'selected' : ''; ?>>95</option>
+                                <option value="94" <?php if (isset($result)) echo $result->USMLE1Score == '94' ? 'selected' : ''; ?>>94</option>
+                                <option value="93" <?php if (isset($result)) echo $result->USMLE1Score == '93' ? 'selected' : ''; ?>>93</option>
+                                <option value="92" <?php if (isset($result)) echo $result->USMLE1Score == '92' ? 'selected' : ''; ?>>92</option>
+                                <option value="91" <?php if (isset($result)) echo $result->USMLE1Score == '91' ? 'selected' : ''; ?>>91</option>
+                                <option value="90" <?php if (isset($result)) echo $result->USMLE1Score == '90' ? 'selected' : ''; ?>>90</option>
+                                <option value="89" <?php if (isset($result)) echo $result->USMLE1Score == '89' ? 'selected' : ''; ?>>89</option>
+                                <option value="88" <?php if (isset($result)) echo $result->USMLE1Score == '88' ? 'selected' : ''; ?>>88</option>
+                                <option value="87" <?php if (isset($result)) echo $result->USMLE1Score == '87' ? 'selected' : ''; ?>>87</option>
+                                <option value="86" <?php if (isset($result)) echo $result->USMLE1Score == '86' ? 'selected' : ''; ?>>86</option>
+                                <option value="85" <?php if (isset($result)) echo $result->USMLE1Score == '85' ? 'selected' : ''; ?>>85</option>
+                                <option value="84" <?php if (isset($result)) echo $result->USMLE1Score == '84' ? 'selected' : ''; ?>>84</option>
+                                <option value="83" <?php if (isset($result)) echo $result->USMLE1Score == '83' ? 'selected' : ''; ?>>83</option>
+                                <option value="82" <?php if (isset($result)) echo $result->USMLE1Score == '82' ? 'selected' : ''; ?>>82</option>
+                                <option value="81" <?php if (isset($result)) echo $result->USMLE1Score == '81' ? 'selected' : ''; ?>>81</option>
+                                <option value="80" <?php if (isset($result)) echo $result->USMLE1Score == '80' ? 'selected' : ''; ?>>80</option>
+                                <option value="79" <?php if (isset($result)) echo $result->USMLE1Score == '79' ? 'selected' : ''; ?>>79</option>
+                                <option value="78" <?php if (isset($result)) echo $result->USMLE1Score == '78' ? 'selected' : ''; ?>>78</option>
+                                <option value="77" <?php if (isset($result)) echo $result->USMLE1Score == '77' ? 'selected' : ''; ?>>77</option>
+                                <option value="76" <?php if (isset($result)) echo $result->USMLE1Score == '76' ? 'selected' : ''; ?>>76</option>
+                                <option value="75" <?php if (isset($result)) echo $result->USMLE1Score == '75' ? 'selected' : ''; ?>>75</option>
+                                <option value="74" <?php if (isset($result)) echo $result->USMLE1Score == '74' ? 'selected' : ''; ?>>74</option>
+                                <option value="73" <?php if (isset($result)) echo $result->USMLE1Score == '73' ? 'selected' : ''; ?>>73</option>
+                                <option value="72" <?php if (isset($result)) echo $result->USMLE1Score == '72' ? 'selected' : ''; ?>>72</option>
+                                <option value="71" <?php if (isset($result)) echo $result->USMLE1Score == '71' ? 'selected' : ''; ?>>71</option>
+                                <option value="70" <?php if (isset($result)) echo $result->USMLE1Score == '70' ? 'selected' : ''; ?>>70</option>
+                                <option value="69" <?php if (isset($result)) echo $result->USMLE1Score == '69' ? 'selected' : ''; ?>>69</option>
+                                <option value="68" <?php if (isset($result)) echo $result->USMLE1Score == '68' ? 'selected' : ''; ?>>68</option>
+                                <option value="67" <?php if (isset($result)) echo $result->USMLE1Score == '67' ? 'selected' : ''; ?>>67</option>
+                                <option value="66" <?php if (isset($result)) echo $result->USMLE1Score == '66' ? 'selected' : ''; ?>>66</option>
+                                <option value="65" <?php if (isset($result)) echo $result->USMLE1Score == '65' ? 'selected' : ''; ?>>65</option>
+                                <option value="64" <?php if (isset($result)) echo $result->USMLE1Score == '64' ? 'selected' : ''; ?>>64</option>
+                                <option value="63" <?php if (isset($result)) echo $result->USMLE1Score == '63' ? 'selected' : ''; ?>>63</option>
+                                <option value="62" <?php if (isset($result)) echo $result->USMLE1Score == '62' ? 'selected' : ''; ?>>62</option>
+                                <option value="61" <?php if (isset($result)) echo $result->USMLE1Score == '61' ? 'selected' : ''; ?>>61</option>
+                                <option value="60" <?php if (isset($result)) echo $result->USMLE1Score == '60' ? 'selected' : ''; ?>>60</option>
+                                <option value="59" <?php if (isset($result)) echo $result->USMLE1Score == '59' ? 'selected' : ''; ?>>59</option>
+                                <option value="58" <?php if (isset($result)) echo $result->USMLE1Score == '58' ? 'selected' : ''; ?>>58</option>
+                                <option value="57" <?php if (isset($result)) echo $result->USMLE1Score == '57' ? 'selected' : ''; ?>>57</option>
+                                <option value="56" <?php if (isset($result)) echo $result->USMLE1Score == '56' ? 'selected' : ''; ?>>56</option>
+                                <option value="55" <?php if (isset($result)) echo $result->USMLE1Score == '55' ? 'selected' : ''; ?>>55</option>
+                                <option value="54" <?php if (isset($result)) echo $result->USMLE1Score == '54' ? 'selected' : ''; ?>>54</option>
+                                <option value="53" <?php if (isset($result)) echo $result->USMLE1Score == '53' ? 'selected' : ''; ?>>53</option>
+                                <option value="52" <?php if (isset($result)) echo $result->USMLE1Score == '52' ? 'selected' : ''; ?>>52</option>
+                                <option value="51" <?php if (isset($result)) echo $result->USMLE1Score == '51' ? 'selected' : ''; ?>>51</option>
+                                <option value="50" <?php if (isset($result)) echo $result->USMLE1Score == '50' ? 'selected' : ''; ?>>50</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group usmle hide">
+                        <label for="chkUSMLECS" class="control-label">USMLE Step 2 CS</label>
+                        <div class="controls">
+                            <div class="check-demo-col">
+                                <div class="check-line">
+                                    <input type="checkbox" id="chkUSMLECS" name="chkUSMLECS" class='icheck-me' data-skin="square" data-color="blue">
+                                    <label class='inline' for="chkUSMLECS">Check if completed</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="cmbSpeciality" class="control-label">Specialty</label>
+                        <div class="controls">
+                            <select name="cmbSpeciality" id="cmbSpeciality" class='input-large' data-rule-required="true">
+                                <option value="">Select One</option>
+                                <?php if (is_array($speciality)) : ?>
+                                    <?php foreach ($speciality as $spec): ?>
+                                        <option value="<?php echo $spec->SpecialityID ?>" <?php if (isset($result)) echo ($spec->SpecialityID == $result->SpecialityID) ? 'selected' : ''; ?>><?php echo $spec->Text; ?></option>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
                             </select>
                         </div>
                     </div>
@@ -247,109 +276,81 @@
                             <input type="text" name="txtEmail" id="txtEmail" class='input-xlarge required email' value="<?php echo isset($result) ? $result->Email : ''; ?>" data-rule-required="true">
                         </div>
                     </div>
+                    
                     <div class="control-group">
                         <label for="txtCity" class="control-label">City</label>
                         <div class="controls">
-                            <input type="text" name="txtCity" id="txtCity" class='input-xlarge required' value="<?php echo isset($result) ? $result->City : ''; ?>" data-rule-required="true">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label for="txtPhone" class="control-label">Phone Number</label>
-                        <div class="controls">
-                            <input type="text" name="txtPhone" id="txtPhone" class='input-xlarge required' value="<?php echo isset($result) ? $result->Phone : ''; ?>" data-rule-required="true">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label for="cmbState" class="control-label">State of Residence</label>
-                        <div class="controls">
-                            <select name="cmbState" id="cmbState" class='input-large chosen-select' data-rule-required="true">
-                                <option value="">Select One</option>
-                                <option value="Alabama" <?php if (isset($result)) echo $result->State == 'Alabama' ? 'selected' : ''; ?>>Alabama</option>
-                                <option value="Alaska" <?php if (isset($result)) echo $result->State == 'Alaska' ? 'selected' : ''; ?>>Alaska</option>
-                                <option value="Arizona" <?php if (isset($result)) echo $result->State == 'Arizona' ? 'selected' : ''; ?>>Arizona</option>
-                                <option value="Arkansas" <?php if (isset($result)) echo $result->State == 'Arkansas' ? 'selected' : ''; ?>>Arkansas</option>
-                                <option value="California" <?php if (isset($result)) echo $result->State == 'California' ? 'selected' : ''; ?>>California</option>
-                                <option value="Colorado" <?php if (isset($result)) echo $result->State == 'Colorado' ? 'selected' : ''; ?>>Colorado</option>
-                                <option value="Connecticut" <?php if (isset($result)) echo $result->State == 'Connecticut' ? 'selected' : ''; ?>>Connecticut</option>
-                                <option value="Delaware" <?php if (isset($result)) echo $result->State == 'Delaware' ? 'selected' : ''; ?>>Delaware</option>
-                                <option value="Florida" <?php if (isset($result)) echo $result->State == 'Florida' ? 'selected' : ''; ?>>Florida</option>
-                                <option value="Georgia" <?php if (isset($result)) echo $result->State == 'Georgia' ? 'selected' : ''; ?>>Georgia</option>
-                                <option value="Hawaii" <?php if (isset($result)) echo $result->State == 'Hawaii' ? 'selected' : ''; ?>>Hawaii</option>
-                                <option value="Idaho" <?php if (isset($result)) echo $result->State == 'Idaho' ? 'selected' : ''; ?>>Idaho</option>
-                                <option value="Illinois" <?php if (isset($result)) echo $result->State == 'Illinois' ? 'selected' : ''; ?>>Illinois</option>
-                                <option value="Indiana" <?php if (isset($result)) echo $result->State == 'Indiana' ? 'selected' : ''; ?>>Indiana</option>
-                                <option value="Iowa" <?php if (isset($result)) echo $result->State == 'Iowa' ? 'selected' : ''; ?>>Iowa</option>
-                                <option value="Kansas" <?php if (isset($result)) echo $result->State == 'Kansas' ? 'selected' : ''; ?>>Kansas</option>
-                                <option value="Kentucky" <?php if (isset($result)) echo $result->State == 'Kentucky' ? 'selected' : ''; ?>>Kentucky</option>
-                                <option value="Louisiana" <?php if (isset($result)) echo $result->State == 'Louisiana' ? 'selected' : ''; ?>>Louisiana</option>
-                                <option value="Maine" <?php if (isset($result)) echo $result->State == 'Maine' ? 'selected' : ''; ?>>Maine</option>
-                                <option value="Maryland" <?php if (isset($result)) echo $result->State == 'Maryland' ? 'selected' : ''; ?>>Maryland</option>
-                                <option value="Massachusetts" <?php if (isset($result)) echo $result->State == 'Massachusetts' ? 'selected' : ''; ?>>Massachusetts</option>
-                                <option value="Michigan" <?php if (isset($result)) echo $result->State == 'Michigan' ? 'selected' : ''; ?>>Michigan</option>
-                                <option value="Minnesota" <?php if (isset($result)) echo $result->State == 'Minnesota' ? 'selected' : ''; ?>>Minnesota</option>
-                                <option value="Mississippi" <?php if (isset($result)) echo $result->State == 'Mississippi' ? 'selected' : ''; ?>>Mississippi</option>
-                                <option value="Missouri" <?php if (isset($result)) echo $result->State == 'Missouri' ? 'selected' : ''; ?>>Missouri</option>
-                                <option value="Montana" <?php if (isset($result)) echo $result->State == 'Montana' ? 'selected' : ''; ?>>Montana</option>
-                                <option value="Nebraska" <?php if (isset($result)) echo $result->State == 'Nebraska' ? 'selected' : ''; ?>>Nebraska</option>
-                                <option value="Nevada" <?php if (isset($result)) echo $result->State == 'Nevada' ? 'selected' : ''; ?>>Nevada</option>
-                                <option value="New Hampshire" <?php if (isset($result)) echo $result->State == 'New Hampshire' ? 'selected' : ''; ?>>New Hampshire</option>
-                                <option value="New Jersey" <?php if (isset($result)) echo $result->State == 'New Jersey' ? 'selected' : ''; ?>>New Jersey</option>
-                                <option value="New Mexico" <?php if (isset($result)) echo $result->State == 'New Mexico' ? 'selected' : ''; ?>>New Mexico</option>
-                                <option value="New York" <?php if (isset($result)) echo $result->State == 'New York' ? 'selected' : ''; ?>>New York</option>
-                                <option value="North Carolina" <?php if (isset($result)) echo $result->State == 'North Carolina' ? 'selected' : ''; ?>>North Carolina</option>
-                                <option value="North Dakota" <?php if (isset($result)) echo $result->State == 'North Dakota' ? 'selected' : ''; ?>>North Dakota</option>
-                                <option value="Ohio" <?php if (isset($result)) echo $result->State == 'Ohio' ? 'selected' : ''; ?>>Ohio</option>
-                                <option value="Oklahoma" <?php if (isset($result)) echo $result->State == 'Oklahoma' ? 'selected' : ''; ?>>Oklahoma</option>
-                                <option value="Oregon" <?php if (isset($result)) echo $result->State == 'Oregon' ? 'selected' : ''; ?>>Oregon</option>
-                                <option value="Pennsylvania" <?php if (isset($result)) echo $result->State == 'Pennsylvania' ? 'selected' : ''; ?>>Pennsylvania</option>
-                                <option value="Rhode Island" <?php if (isset($result)) echo $result->State == 'Rhode Island' ? 'selected' : ''; ?>>Rhode Island</option>
-                                <option value="South Carolina" <?php if (isset($result)) echo $result->State == 'South Carolina' ? 'selected' : ''; ?>>South Carolina</option>
-                                <option value="South Dakota" <?php if (isset($result)) echo $result->State == 'South Dakota' ? 'selected' : ''; ?>>South Dakota</option>
-                                <option value="Tennessee" <?php if (isset($result)) echo $result->State == 'Tennessee' ? 'selected' : ''; ?>>Tennessee</option>
-                                <option value="Texas" <?php if (isset($result)) echo $result->State == 'Texas' ? 'selected' : ''; ?>>Texas</option>
-                                <option value="Utah" <?php if (isset($result)) echo $result->State == 'Utah' ? 'selected' : ''; ?>>Utah</option>
-                                <option value="Vermont" <?php if (isset($result)) echo $result->State == 'Vermont' ? 'selected' : ''; ?>>Vermont</option>
-                                <option value="Virginia" <?php if (isset($result)) echo $result->State == 'Virginia' ? 'selected' : ''; ?>>Virginia</option>
-                                <option value="Washington" <?php if (isset($result)) echo $result->State == 'Washington' ? 'selected' : ''; ?>>Washington</option>
-                                <option value="West Virginia" <?php if (isset($result)) echo $result->State == 'West Virginia' ? 'selected' : ''; ?>>West Virginia</option>
-                                <option value="Wisconsin" <?php if (isset($result)) echo $result->State == 'Wisconsin' ? 'selected' : ''; ?>>Wisconsin</option>
-                                <option value="Wyoming" <?php if (isset($result)) echo $result->State == 'Wyoming' ? 'selected' : ''; ?>>Wyoming</option>
-                            </select>
+                            <input type="text" name="txtCity" id="txtCity" class='input-xlarge required' value="<?php if (isset($result)) echo $result->City; ?>" data-rule-required="true">
                         </div>
                     </div>
                     <div class="control-group">
                         <label for="txtAddress" class="control-label">Home Address</label>
                         <div class="controls">
-                            <textarea name="txtAddress" id="txtAddress" class='input-xlarge required' data-rule-required="true"><?php echo isset($result) ? $result->Address : ''; ?></textarea>
+                            <textarea name="txtAddress" id="txtAddress" class='input-xlarge'><?php echo isset($result) ? $result->Address : ''; ?></textarea>
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label">Preferred method of contact</label>
+                        <label for="txtPhone" class="control-label">Phone</label>
                         <div class="controls">
-                            <div class="check-line">
-                                <input type="radio" id="pmcEmail" class='icheck-me' name="rdoPMC" value="email" data-skin="square" data-color="blue" <?php if (isset($result)) echo $result->ContactMethod == 'email' ? 'checked' : ''; else echo 'checked'; ?>>
-                                <label class='inline' for="pmcEmail">Email address only</label>
-                            </div>
-                            <div class="check-line">
-                                <input type="radio" id="pmcPhone" class='icheck-me' name="rdoPMC" value="phone" data-skin="square" data-color="blue"  <?php if (isset($result)) echo $result->ContactMethod == 'phone' ? 'checked' : ''; ?>>
-                                <label class='inline' for="pmcPhone">Phone number only</label>
-                            </div>
-                            <div class="check-line">
-                                <input type="radio" id="pmcEmailPhone" class='icheck-me' name="rdoPMC" value="email-phone" data-skin="square" data-color="blue"  <?php if (isset($result)) echo $result->ContactMethod == 'email-phone' ? 'checked' : ''; ?>>
-                                <label class='inline' for="pmcEmailPhone">Email address and phone number</label>
-                            </div>										
+                            <input type="text" name="txtPhone" id="txtPhone" class='input-xlarge required' value="<?php if (isset($result)) echo $result->Phone; ?>" data-rule-required="true">
                         </div>
                     </div>
+                    <div class="control-group">
+                        <label for="rdoContactMethod" class="control-label">Preferred Method of Contact</label>
+                        <div class="controls">
+                            <div class="check-demo-col">
+                                <div class="check-line">
+                                    <input type="radio" id="ContactEmail" class='icheck-me' name="rdoContactMethod" value="1" data-skin="square" data-color="blue" checked>
+                                    <label class='inline' for="ContactEmail">Email address only</label>
+                                </div>
+                                <div class="check-line">
+                                    <input type="radio" id="ContactPhone" class='icheck-me' name="rdoContactMethod" value="2" data-skin="square" data-color="blue">
+                                    <label class='inline' for="ContactPhone">Phone Number only</label>
+                                </div>
+                                <div class="check-line">
+                                    <input type="radio" id="ContactEmailPhone" class='icheck-me' name="rdoContactMethod" value="" data-skin="square" data-color="blue">
+                                    <label class='inline' for="ContactEmailPhone">Email address and Phone Number</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="rdoStatus" class="control-label">Status</label>
+                        <div class="controls">
+                            <div class="check-demo-col">
+                                <div class="check-line">
+                                    <input type="radio" id="Active" class='icheck-me' name="rdoStatus" value="1" data-skin="square" data-color="blue" checked>
+                                    <label class='inline' for="Active">Active</label>
+                                </div>
+                                <div class="check-line">
+                                    <input type="radio" id="InActive" class='icheck-me' name="rdoStatus" value="0" data-skin="square" data-color="blue">
+                                    <label class='inline' for="InActive">In Active</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="span12">
                         <div class="form-actions">
-                            <input type="hidden" name="action" value="<?php echo isset($result) ? 'edit' : 'insert'; ?>">
                             <button type="submit" name="submit" value="frmStudentSubmit" class="btn btn-primary">Save</button>
                             <button type="button" class="btn">Cancel</button>
                         </div>
                     </div>
-
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#chkUSMLE').change(function() {
+            if ($(this).prop('checked')) {
+                $('.usmle').removeClass('hide');
+            } else {
+                $('.usmle').addClass('hide');
+            }
+        });
+        $('#chkUSMLE').trigger('change');
+    });
+</script>

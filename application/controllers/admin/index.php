@@ -36,7 +36,25 @@ class Index extends Base_Controller {
     public function logout() 
     {
         $this->session->unset_userdata('user');
-
         redirect(base_url('admin/index'));
+    }
+
+    public function forgot() 
+    {
+        $this->load->library('email');
+
+        $this->email->from('info@kemcaana.com', 'Hope KEMCAANA');
+        $this->email->to('admin@hope.com'); 
+//        $this->email->cc('another@another-example.com'); 
+//        $this->email->bcc('them@their-example.com'); 
+
+        $this->email->subject('Password Recovery');
+        $this->email->message('Your password is "admin" ');
+        
+        setNotification('success', 'Password email sent to you. Check your inbox.');
+        
+        redirect(base_url('admin/index'));
+//        $this->email->send();
+
     }
 }

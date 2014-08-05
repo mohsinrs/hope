@@ -6,74 +6,101 @@ class Doctor_model extends CI_Model {
         // Call the Model constructor
         parent::__construct();
     }
-     function fetchAll()
+
+    function fetchAll()
     {
-        $query = $this->db->get_where('doctor', array('IsDeleted' => 0), NULL, NULL);
+        $this->db->select('*');
+        $this->db->from('doctor');
+        $this->db->join('speciality', 'speciality.SpecialityID = doctor.SpecialityID');
+        $query = $this->db->get();
+        
         return $query->result();
     }
-     function getOne($id)
+
+    function getOne($id)
     {
-        $query = $this->db->get_where('doctor', array('DoctorID' => $id, 'IsDeleted' => 0), NULL, NULL);
+        $query = $this->db->get_where('doctor', array('DoctorID' => $id), NULL, NULL);
         return $query->result();
     }
-    function insertDoctor($data)
+
+    function insert()
     {
+        $data = $this->input->post();
+        $USMLECS = isset($data['chkUSMLECS']) ? 1 : 0;
+        $IsActive = array_key_exists("rdoStatus" , $data) ? $data['rdoStatus'] : 1;
+
         $array = array(
-            'UserName' => $data['txtUserName'] ,
             'FirstName' => $data['txtFirstName'] ,
             'LastName' => $data['txtLastName'] ,
-            'GraduationYear' => $data['txtGraduation'] ,
-            'City' => $data['txtCity'] ,
-            'Zip' => $data['txtZip'] ,
-            'Phone' => $data['txtPhone'] ,
-            'Qualification' => $data['txtQualification'] ,
-            'Institute' => $data['txtInstitute'] ,
-            'Designation' => $data['cmbDesignation'] ,
-            'Detail' => $data['txtDetails'] ,
+            'Gender' => $data['rdoGender'] ,
+            'GraduationYear' => $data['cmbGraduation'] ,
+            'USMLE1' => $data['cmbUSMLE1'] ,
+            'USMLE2' => $data['cmbUSMLE2'] ,
+            'USMLECS' => $USMLECS ,
+            'SpecialityID' => $data['cmbSpeciality'] ,
+            'PostQualification' => $data['txtQualification'] ,
             'Email' => $data['txtEmail'] ,
+            'State' => $data['cmbState'] ,
+            'City' => $data['txtCity'] ,
             'Address' => $data['txtAddress'] ,
-            'State' => $data['txtState'] ,
-            'Country' => $data['txtCountry'] ,
-            'Fax' => $data['txtFax'] ,
-            'Speciality' => $data['cmbSpeciality'] ,
-            'PracticeType' => $data['cmbPracticeType'] ,
-            'MemberType' => $data['cmbMemberType'] ,
-            'IsDeleted' => 0
+            'Phone' => $data['txtPhone'] ,
+            'ContactMethod' => $data['rdoContactMethod'] ,
+            'ConfirmationSent' => 0 ,
+            'IsActive' => $IsActive
         );
 
         $this->db->insert('doctor', $array);
         return ($this->db->affected_rows() != 1) ? false : true;
     }
     
-    function update($data, $id)
+    function update($id)
     {
+        $data = $this->input->post();
+        $USMLECS = isset($data['chkUSMLECS']) ? 1 : 0;
         $array = array(
-           'UserName' => $data['txtUserName'] ,
             'FirstName' => $data['txtFirstName'] ,
             'LastName' => $data['txtLastName'] ,
-            'GraduationYear' => $data['txtGraduation'] ,
-            'City' => $data['txtCity'] ,
-            'Zip' => $data['txtZip'] ,
-            'Phone' => $data['txtPhone'] ,
-            'Qualification' => $data['txtQualification'] ,
-            'Institute' => $data['txtInstitute'] ,
-            'Designation' => $data['cmbDesignation'] ,
-            'Detail' => $data['txtDetails'] ,
+            'Gender' => $data['rdoGender'] ,
+            'GraduationYear' => $data['cmbGraduation'] ,
+            'USMLE1' => $data['cmbUSMLE1'] ,
+            'USMLE2' => $data['cmbUSMLE2'] ,
+            'USMLECS' => $USMLECS ,
+            'SpecialityID' => $data['cmbSpeciality'] ,
+            'PostQualification' => $data['txtQualification'] ,
             'Email' => $data['txtEmail'] ,
+            'State' => $data['cmbState'] ,
+            'City' => $data['txtCity'] ,
             'Address' => $data['txtAddress'] ,
-            'State' => $data['txtState'] ,
-            'Country' => $data['txtCountry'] ,
-            'Fax' => $data['txtFax'] ,
-            'Speciality' => $data['cmbSpeciality'] ,
-            'PracticeType' => $data['cmbPracticeType'] ,
-            'MemberType' => $data['cmbMemberType'] ,
-            'IsDeleted' => 0
+            'Phone' => $data['txtPhone'] ,
+            'ContactMethod' => $data['rdoContactMethod'] ,
+            'IsActive' => $data['rdoStatus']
         );
 
         $this->db->where('DoctorID', $id);
         $this->db->update('doctor', $array);
         //return ($this->db->affected_rows() != 1) ? false : true;
         return true;
+    }
+    
+    function confirm($id, $pass)
+    {
+        $array = array(
+            'ConfirmationSent' => 1 ,
+            'Password' => md5 ($pass)
+        );
+
+        $this->db->where('DoctorID', $id);
+        $this->db->update('doctor', $array);
+
+        return true;
+    }
+
+    function delete($id)
+    {
+        $this->db->where('DoctorID', $id);
+        $this->db->delete('doctor');
+
+        return ($this->db->affected_rows() != 1) ? false : true;
     }
     
 }

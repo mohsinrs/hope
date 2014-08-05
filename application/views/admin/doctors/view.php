@@ -1,19 +1,12 @@
 <div class="row-fluid">
     <div class="span12">
+        <?php renderNotification() ?>
         <div class="box box-bordered">
             <div class="box-title">
-                <h3><i class="icon-edit"></i> Add/Edit Doctor</h3>
+                <h3><i class="icon-edit"></i> Add/Edit Consultant</h3>
             </div>
             <div class="box-content nopadding">
                 <form action="" method="POST" class='form-horizontal form-bordered form-validate' id="frmDoctor">
-                    <!--
-                    <div class="control-group">
-                        <label for="txtUserName" class="control-label">User Name</label>
-                        <div class="controls">
-                            <input type="text" name="txtUserName" id="txtUserName" class='input-xlarge required' value="<?php if (isset($result)) echo $result->UserName; ?>" data-rule-required="true">
-                        </div>
-                    </div>
-                    -->
                     <div class="control-group">
                         <label for="txtFirstName" class="control-label">First Name</label>
                         <div class="controls">
@@ -27,20 +20,24 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label for="cmbGender" class="control-label">Gender</label>
+                        <label for="rdoGender" class="control-label">Gender</label>
                         <div class="controls">
-                            <select name="cmbGender" id="cmbGender" class='input-large chosen-select' data-rule-required="true">
-                                <option value="">Select One</option>
-                                <option value="Male" <?php if (isset($result)) echo $result->Gender == 'Male' ? 'selected' : ''; ?>>Male</option>
-                                <option value="Female" <?php if (isset($result)) echo $result->Gender == 'Female' ? 'selected' : ''; ?>>Female</option>
-                            </select>
+                            <div class="check-demo-col">
+                                <div class="check-line">
+                                    <input type="radio" id="Male" class='icheck-me' name="rdoGender" value="Male" data-skin="square" data-color="blue" checked>
+                                    <label class='inline' for="Male">Male</label>
+                                </div>
+                                <div class="check-line">
+                                    <input type="radio" id="Female" class='icheck-me' name="rdoGender" value="Female" data-skin="square" data-color="blue">
+                                    <label class='inline' for="Female">Female</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
                     <div class="control-group">
-                        <label for="txtGraduation" class="control-label">Year of Graduation</label>
+                        <label for="cmbGraduation" class="control-label">Year of Graduation</label>
                         <div class="controls">
-                            <select name="txtGraduation" id="txtGraduation" class='input-large chosen-select' data-rule-required="true">
+                            <select name="cmbGraduation" id="cmbGraduation" class='input-large required' data-rule-required="true">
                                 <option value="">Select One</option>
                                 <option value="2014" <?php if (isset($result)) echo $result->GraduationYear == '2014' ? 'selected' : ''; ?>>2014</option>
                                 <option value="2013" <?php if (isset($result)) echo $result->GraduationYear == '2013' ? 'selected' : ''; ?>>2013</option>
@@ -52,7 +49,6 @@
                                 <option value="2007" <?php if (isset($result)) echo $result->GraduationYear == '2007' ? 'selected' : ''; ?>>2007</option>
                                 <option value="2006" <?php if (isset($result)) echo $result->GraduationYear == '2006' ? 'selected' : ''; ?>>2006</option>
                                 <option value="2005" <?php if (isset($result)) echo $result->GraduationYear == '2005' ? 'selected' : ''; ?>>2005</option>
-
                                 <option value="2004" <?php if (isset($result)) echo $result->GraduationYear == '2004' ? 'selected' : ''; ?>>2004</option>
                                 <option value="2003" <?php if (isset($result)) echo $result->GraduationYear == '2003' ? 'selected' : ''; ?>>2003</option>
                                 <option value="2002" <?php if (isset($result)) echo $result->GraduationYear == '2002' ? 'selected' : ''; ?>>2002</option>
@@ -63,12 +59,10 @@
                                 <option value="1997" <?php if (isset($result)) echo $result->GraduationYear == '1998' ? 'selected' : ''; ?>>1997</option>
                                 <option value="1996" <?php if (isset($result)) echo $result->GraduationYear == '1997' ? 'selected' : ''; ?>>1996</option>
                                 <option value="1995" <?php if (isset($result)) echo $result->GraduationYear == '1996' ? 'selected' : ''; ?>>1995</option>
-
                                 <option value="1994" <?php if (isset($result)) echo $result->GraduationYear == '1994' ? 'selected' : ''; ?>>1994</option>
                                 <option value="1993" <?php if (isset($result)) echo $result->GraduationYear == '1993' ? 'selected' : ''; ?>>1993</option>
                                 <option value="1992" <?php if (isset($result)) echo $result->GraduationYear == '1992' ? 'selected' : ''; ?>>1992</option>
                                 <option value="1991" <?php if (isset($result)) echo $result->GraduationYear == '1991' ? 'selected' : ''; ?>>1991</option>
-
                                 <option value="1990" <?php if (isset($result)) echo $result->GraduationYear == '1990' ? 'selected' : ''; ?>>1990</option>
                                 <option value="1989" <?php if (isset($result)) echo $result->GraduationYear == '1989' ? 'selected' : ''; ?>>1989</option>
                                 <option value="1988" <?php if (isset($result)) echo $result->GraduationYear == '1988' ? 'selected' : ''; ?>>1988</option>
@@ -79,9 +73,6 @@
                                 <option value="1983" <?php if (isset($result)) echo $result->GraduationYear == '1983' ? 'selected' : ''; ?>>1983</option>
                                 <option value="1982" <?php if (isset($result)) echo $result->GraduationYear == '1982' ? 'selected' : ''; ?>>1982</option>
                                 <option value="1981" <?php if (isset($result)) echo $result->GraduationYear == '1981' ? 'selected' : ''; ?>>1981</option>
-
-
-
                                 <option value="1980" <?php if (isset($result)) echo $result->GraduationYear == '1980' ? 'selected' : ''; ?>>1980</option>
                                 <option value="1979" <?php if (isset($result)) echo $result->GraduationYear == '1979' ? 'selected' : ''; ?>>1979</option>
                                 <option value="1978" <?php if (isset($result)) echo $result->GraduationYear == '1978' ? 'selected' : ''; ?>>1978</option>
@@ -92,8 +83,6 @@
                                 <option value="1973" <?php if (isset($result)) echo $result->GraduationYear == '1973' ? 'selected' : ''; ?>>1973</option>
                                 <option value="1972" <?php if (isset($result)) echo $result->GraduationYear == '1972' ? 'selected' : ''; ?>>1972</option>
                                 <option value="1971" <?php if (isset($result)) echo $result->GraduationYear == '1971' ? 'selected' : ''; ?>>1971</option>
-
-
                                 <option value="1970" <?php if (isset($result)) echo $result->GraduationYear == '1970' ? 'selected' : ''; ?>>1970</option>
                                 <option value="1969" <?php if (isset($result)) echo $result->GraduationYear == '1969' ? 'selected' : ''; ?>>1969</option>
                                 <option value="1968" <?php if (isset($result)) echo $result->GraduationYear == '1968' ? 'selected' : ''; ?>>1968</option>
@@ -104,7 +93,6 @@
                                 <option value="1963" <?php if (isset($result)) echo $result->GraduationYear == '1963' ? 'selected' : ''; ?>>1963</option>
                                 <option value="1962" <?php if (isset($result)) echo $result->GraduationYear == '1962' ? 'selected' : ''; ?>>1962</option>
                                 <option value="1961" <?php if (isset($result)) echo $result->GraduationYear == '1961' ? 'selected' : ''; ?>>1961</option>
-
                                 <option value="1960" <?php if (isset($result)) echo $result->GraduationYear == '1960' ? 'selected' : ''; ?>>1960</option>
                                 <option value="1959" <?php if (isset($result)) echo $result->GraduationYear == '1959' ? 'selected' : ''; ?>>1959</option>
                                 <option value="1958" <?php if (isset($result)) echo $result->GraduationYear == '1958' ? 'selected' : ''; ?>>1958</option>
@@ -115,8 +103,6 @@
                                 <option value="1953" <?php if (isset($result)) echo $result->GraduationYear == '1953' ? 'selected' : ''; ?>>1953</option>
                                 <option value="1952" <?php if (isset($result)) echo $result->GraduationYear == '1952' ? 'selected' : ''; ?>>1952</option>
                                 <option value="1951" <?php if (isset($result)) echo $result->GraduationYear == '1951' ? 'selected' : ''; ?>>1951</option>
-
-
                                 <option value="1950" <?php if (isset($result)) echo $result->GraduationYear == '1950' ? 'selected' : ''; ?>>1950</option>
                                 <option value="1949" <?php if (isset($result)) echo $result->GraduationYear == '1949' ? 'selected' : ''; ?>>1949</option>
                                 <option value="1948" <?php if (isset($result)) echo $result->GraduationYear == '1948' ? 'selected' : ''; ?>>1948</option>
@@ -131,75 +117,176 @@
                             </select>
                         </div>
                     </div>
-
-
                     <div class="control-group">
-                        <label for="txtCity" class="control-label">City</label>
+                        <label for="chkUSMLE" class="control-label">Have attended USMLE?</label>
                         <div class="controls">
-                            <input type="text" name="txtCity" id="txtCity" class='input-xlarge required' value="<?php if (isset($result)) echo $result->City; ?>" data-rule-required="true">
+                            <div class="check-demo-col">
+                                <div class="check-line">
+                                    <input type="checkbox" id="chkUSMLE" name="chkUSMLE" class='icheck-me' data-skin="square" data-color="blue">
+                                    <label class='inline' for="chkUSMLE">Check if attended USMLE</label>
+                                </div>
+                            </div>
+                            <span class="help-block">This is meant to help assign suitable applicant for guidance.</span>
                         </div>
                     </div>
-                    <div class="control-group">
-                        <label for="txtZip" class="control-label">Zip</label>
+                    <div class="control-group usmle hide">
+                        <label for="cmbUSMLE1" class="control-label">USMLE Step 1 Score</label>
                         <div class="controls">
-                            <input type="text" name="txtZip" id="txtZip" class='input-xlarge required' value="<?php if (isset($result)) echo $result->Zip; ?>" data-rule-required="true">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label for="txtPhone" class="control-label">Phone</label>
-                        <div class="controls">
-                            <input type="text" name="txtPhone" id="txtPhone" class='input-xlarge required' value="<?php if (isset($result)) echo $result->Phone; ?>" data-rule-required="true">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label for="txtQualification" class="control-label">Qualifications</label>
-                        <div class="controls">
-                            <input type="text" name="txtQualification" id="txtQualification" class='input-xlarge required' data-rule-required="true" value="<?php echo isset($result) ? $result->Qualification : ''; ?>">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label for="txtInstitute" class="control-label">Institute</label>
-                        <div class="controls">
-                            <input type="text" name="txtInstitute" id="txtInstitute" class='input-xlarge required' data-rule-required="true" value="<?php echo isset($result) ? $result->Institute : ''; ?>">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label for="cmbDesignation" class="control-label">Designation</label>
-                        <div class="controls">
-                            <select name="cmbDesignation" id="cmbDesignation" class='input-large chosen-select' data-rule-required="true">
+                            <select name="cmbUSMLE1" id="cmbUSMLE1" class='input-large required' data-rule-required="true">
                                 <option value="">Select One</option>
-                                <option value="Male" <?php if (isset($result)) echo $result->Designation == 'Male' ? 'selected' : ''; ?>>Male</option>
-                                <option value="Female" <?php if (isset($result)) echo $result->Designatin == 'Female' ? 'selected' : ''; ?>>Female</option>
+                                <option value="100" <?php if (isset($result)) echo $result->USMLE1 == '100' ? 'selected' : ''; ?>>100</option>
+                                <option value="99" <?php if (isset($result)) echo $result->USMLE1 == '99' ? 'selected' : ''; ?>>99</option>
+                                <option value="98" <?php if (isset($result)) echo $result->USMLE1 == '98' ? 'selected' : ''; ?>>98</option>
+                                <option value="97" <?php if (isset($result)) echo $result->USMLE1 == '97' ? 'selected' : ''; ?>>97</option>
+                                <option value="96" <?php if (isset($result)) echo $result->USMLE1 == '96' ? 'selected' : ''; ?>>96</option>
+                                <option value="95" <?php if (isset($result)) echo $result->USMLE1 == '95' ? 'selected' : ''; ?>>95</option>
+                                <option value="94" <?php if (isset($result)) echo $result->USMLE1 == '94' ? 'selected' : ''; ?>>94</option>
+                                <option value="93" <?php if (isset($result)) echo $result->USMLE1 == '93' ? 'selected' : ''; ?>>93</option>
+                                <option value="92" <?php if (isset($result)) echo $result->USMLE1 == '92' ? 'selected' : ''; ?>>92</option>
+                                <option value="91" <?php if (isset($result)) echo $result->USMLE1 == '91' ? 'selected' : ''; ?>>91</option>
+                                <option value="90" <?php if (isset($result)) echo $result->USMLE1 == '90' ? 'selected' : ''; ?>>90</option>
+                                <option value="89" <?php if (isset($result)) echo $result->USMLE1 == '89' ? 'selected' : ''; ?>>89</option>
+                                <option value="88" <?php if (isset($result)) echo $result->USMLE1 == '88' ? 'selected' : ''; ?>>88</option>
+                                <option value="87" <?php if (isset($result)) echo $result->USMLE1 == '87' ? 'selected' : ''; ?>>87</option>
+                                <option value="86" <?php if (isset($result)) echo $result->USMLE1 == '86' ? 'selected' : ''; ?>>86</option>
+                                <option value="85" <?php if (isset($result)) echo $result->USMLE1 == '85' ? 'selected' : ''; ?>>85</option>
+                                <option value="84" <?php if (isset($result)) echo $result->USMLE1 == '84' ? 'selected' : ''; ?>>84</option>
+                                <option value="83" <?php if (isset($result)) echo $result->USMLE1 == '83' ? 'selected' : ''; ?>>83</option>
+                                <option value="82" <?php if (isset($result)) echo $result->USMLE1 == '82' ? 'selected' : ''; ?>>82</option>
+                                <option value="81" <?php if (isset($result)) echo $result->USMLE1 == '81' ? 'selected' : ''; ?>>81</option>
+                                <option value="80" <?php if (isset($result)) echo $result->USMLE1 == '80' ? 'selected' : ''; ?>>80</option>
+                                <option value="79" <?php if (isset($result)) echo $result->USMLE1 == '79' ? 'selected' : ''; ?>>79</option>
+                                <option value="78" <?php if (isset($result)) echo $result->USMLE1 == '78' ? 'selected' : ''; ?>>78</option>
+                                <option value="77" <?php if (isset($result)) echo $result->USMLE1 == '77' ? 'selected' : ''; ?>>77</option>
+                                <option value="76" <?php if (isset($result)) echo $result->USMLE1 == '76' ? 'selected' : ''; ?>>76</option>
+                                <option value="75" <?php if (isset($result)) echo $result->USMLE1 == '75' ? 'selected' : ''; ?>>75</option>
+                                <option value="74" <?php if (isset($result)) echo $result->USMLE1 == '74' ? 'selected' : ''; ?>>74</option>
+                                <option value="73" <?php if (isset($result)) echo $result->USMLE1 == '73' ? 'selected' : ''; ?>>73</option>
+                                <option value="72" <?php if (isset($result)) echo $result->USMLE1 == '72' ? 'selected' : ''; ?>>72</option>
+                                <option value="71" <?php if (isset($result)) echo $result->USMLE1 == '71' ? 'selected' : ''; ?>>71</option>
+                                <option value="70" <?php if (isset($result)) echo $result->USMLE1 == '70' ? 'selected' : ''; ?>>70</option>
+                                <option value="69" <?php if (isset($result)) echo $result->USMLE1 == '69' ? 'selected' : ''; ?>>69</option>
+                                <option value="68" <?php if (isset($result)) echo $result->USMLE1 == '68' ? 'selected' : ''; ?>>68</option>
+                                <option value="67" <?php if (isset($result)) echo $result->USMLE1 == '67' ? 'selected' : ''; ?>>67</option>
+                                <option value="66" <?php if (isset($result)) echo $result->USMLE1 == '66' ? 'selected' : ''; ?>>66</option>
+                                <option value="65" <?php if (isset($result)) echo $result->USMLE1 == '65' ? 'selected' : ''; ?>>65</option>
+                                <option value="64" <?php if (isset($result)) echo $result->USMLE1 == '64' ? 'selected' : ''; ?>>64</option>
+                                <option value="63" <?php if (isset($result)) echo $result->USMLE1 == '63' ? 'selected' : ''; ?>>63</option>
+                                <option value="62" <?php if (isset($result)) echo $result->USMLE1 == '62' ? 'selected' : ''; ?>>62</option>
+                                <option value="61" <?php if (isset($result)) echo $result->USMLE1 == '61' ? 'selected' : ''; ?>>61</option>
+                                <option value="60" <?php if (isset($result)) echo $result->USMLE1 == '60' ? 'selected' : ''; ?>>60</option>
+                                <option value="59" <?php if (isset($result)) echo $result->USMLE1 == '59' ? 'selected' : ''; ?>>59</option>
+                                <option value="58" <?php if (isset($result)) echo $result->USMLE1 == '58' ? 'selected' : ''; ?>>58</option>
+                                <option value="57" <?php if (isset($result)) echo $result->USMLE1 == '57' ? 'selected' : ''; ?>>57</option>
+                                <option value="56" <?php if (isset($result)) echo $result->USMLE1 == '56' ? 'selected' : ''; ?>>56</option>
+                                <option value="55" <?php if (isset($result)) echo $result->USMLE1 == '55' ? 'selected' : ''; ?>>55</option>
+                                <option value="54" <?php if (isset($result)) echo $result->USMLE1 == '54' ? 'selected' : ''; ?>>54</option>
+                                <option value="53" <?php if (isset($result)) echo $result->USMLE1 == '53' ? 'selected' : ''; ?>>53</option>
+                                <option value="52" <?php if (isset($result)) echo $result->USMLE1 == '52' ? 'selected' : ''; ?>>52</option>
+                                <option value="51" <?php if (isset($result)) echo $result->USMLE1 == '51' ? 'selected' : ''; ?>>51</option>
+                                <option value="50" <?php if (isset($result)) echo $result->USMLE1 == '50' ? 'selected' : ''; ?>>50</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group usmle hide">
+                        <label for="cmbUSMLE2" class="control-label">USMLE Step 2 Score</label>
+                        <div class="controls">
+                            <select name="cmbUSMLE2" id="cmbUSMLE2" class='input-large required' data-rule-required="true">
+                                <option value="">Select One</option>
+                                <option value="100" <?php if (isset($result)) echo $result->USMLE2 == '100' ? 'selected' : ''; ?>>100</option>
+                                <option value="99" <?php if (isset($result)) echo $result->USMLE2 == '99' ? 'selected' : ''; ?>>99</option>
+                                <option value="98" <?php if (isset($result)) echo $result->USMLE2 == '98' ? 'selected' : ''; ?>>98</option>
+                                <option value="97" <?php if (isset($result)) echo $result->USMLE2 == '97' ? 'selected' : ''; ?>>97</option>
+                                <option value="96" <?php if (isset($result)) echo $result->USMLE2 == '96' ? 'selected' : ''; ?>>96</option>
+                                <option value="95" <?php if (isset($result)) echo $result->USMLE2 == '95' ? 'selected' : ''; ?>>95</option>
+                                <option value="94" <?php if (isset($result)) echo $result->USMLE2 == '94' ? 'selected' : ''; ?>>94</option>
+                                <option value="93" <?php if (isset($result)) echo $result->USMLE2 == '93' ? 'selected' : ''; ?>>93</option>
+                                <option value="92" <?php if (isset($result)) echo $result->USMLE2 == '92' ? 'selected' : ''; ?>>92</option>
+                                <option value="91" <?php if (isset($result)) echo $result->USMLE2 == '91' ? 'selected' : ''; ?>>91</option>
+                                <option value="90" <?php if (isset($result)) echo $result->USMLE2 == '90' ? 'selected' : ''; ?>>90</option>
+                                <option value="89" <?php if (isset($result)) echo $result->USMLE2 == '89' ? 'selected' : ''; ?>>89</option>
+                                <option value="88" <?php if (isset($result)) echo $result->USMLE2 == '88' ? 'selected' : ''; ?>>88</option>
+                                <option value="87" <?php if (isset($result)) echo $result->USMLE2 == '87' ? 'selected' : ''; ?>>87</option>
+                                <option value="86" <?php if (isset($result)) echo $result->USMLE2 == '86' ? 'selected' : ''; ?>>86</option>
+                                <option value="85" <?php if (isset($result)) echo $result->USMLE2 == '85' ? 'selected' : ''; ?>>85</option>
+                                <option value="84" <?php if (isset($result)) echo $result->USMLE2 == '84' ? 'selected' : ''; ?>>84</option>
+                                <option value="83" <?php if (isset($result)) echo $result->USMLE2 == '83' ? 'selected' : ''; ?>>83</option>
+                                <option value="82" <?php if (isset($result)) echo $result->USMLE2 == '82' ? 'selected' : ''; ?>>82</option>
+                                <option value="81" <?php if (isset($result)) echo $result->USMLE2 == '81' ? 'selected' : ''; ?>>81</option>
+                                <option value="80" <?php if (isset($result)) echo $result->USMLE2 == '80' ? 'selected' : ''; ?>>80</option>
+                                <option value="79" <?php if (isset($result)) echo $result->USMLE2 == '79' ? 'selected' : ''; ?>>79</option>
+                                <option value="78" <?php if (isset($result)) echo $result->USMLE2 == '78' ? 'selected' : ''; ?>>78</option>
+                                <option value="77" <?php if (isset($result)) echo $result->USMLE2 == '77' ? 'selected' : ''; ?>>77</option>
+                                <option value="76" <?php if (isset($result)) echo $result->USMLE2 == '76' ? 'selected' : ''; ?>>76</option>
+                                <option value="75" <?php if (isset($result)) echo $result->USMLE2 == '75' ? 'selected' : ''; ?>>75</option>
+                                <option value="74" <?php if (isset($result)) echo $result->USMLE2 == '74' ? 'selected' : ''; ?>>74</option>
+                                <option value="73" <?php if (isset($result)) echo $result->USMLE2 == '73' ? 'selected' : ''; ?>>73</option>
+                                <option value="72" <?php if (isset($result)) echo $result->USMLE2 == '72' ? 'selected' : ''; ?>>72</option>
+                                <option value="71" <?php if (isset($result)) echo $result->USMLE2 == '71' ? 'selected' : ''; ?>>71</option>
+                                <option value="70" <?php if (isset($result)) echo $result->USMLE2 == '70' ? 'selected' : ''; ?>>70</option>
+                                <option value="69" <?php if (isset($result)) echo $result->USMLE2 == '69' ? 'selected' : ''; ?>>69</option>
+                                <option value="68" <?php if (isset($result)) echo $result->USMLE2 == '68' ? 'selected' : ''; ?>>68</option>
+                                <option value="67" <?php if (isset($result)) echo $result->USMLE2 == '67' ? 'selected' : ''; ?>>67</option>
+                                <option value="66" <?php if (isset($result)) echo $result->USMLE2 == '66' ? 'selected' : ''; ?>>66</option>
+                                <option value="65" <?php if (isset($result)) echo $result->USMLE2 == '65' ? 'selected' : ''; ?>>65</option>
+                                <option value="64" <?php if (isset($result)) echo $result->USMLE2 == '64' ? 'selected' : ''; ?>>64</option>
+                                <option value="63" <?php if (isset($result)) echo $result->USMLE2 == '63' ? 'selected' : ''; ?>>63</option>
+                                <option value="62" <?php if (isset($result)) echo $result->USMLE2 == '62' ? 'selected' : ''; ?>>62</option>
+                                <option value="61" <?php if (isset($result)) echo $result->USMLE2 == '61' ? 'selected' : ''; ?>>61</option>
+                                <option value="60" <?php if (isset($result)) echo $result->USMLE2 == '60' ? 'selected' : ''; ?>>60</option>
+                                <option value="59" <?php if (isset($result)) echo $result->USMLE2 == '59' ? 'selected' : ''; ?>>59</option>
+                                <option value="58" <?php if (isset($result)) echo $result->USMLE2 == '58' ? 'selected' : ''; ?>>58</option>
+                                <option value="57" <?php if (isset($result)) echo $result->USMLE2 == '57' ? 'selected' : ''; ?>>57</option>
+                                <option value="56" <?php if (isset($result)) echo $result->USMLE2 == '56' ? 'selected' : ''; ?>>56</option>
+                                <option value="55" <?php if (isset($result)) echo $result->USMLE2 == '55' ? 'selected' : ''; ?>>55</option>
+                                <option value="54" <?php if (isset($result)) echo $result->USMLE2 == '54' ? 'selected' : ''; ?>>54</option>
+                                <option value="53" <?php if (isset($result)) echo $result->USMLE2 == '53' ? 'selected' : ''; ?>>53</option>
+                                <option value="52" <?php if (isset($result)) echo $result->USMLE2 == '52' ? 'selected' : ''; ?>>52</option>
+                                <option value="51" <?php if (isset($result)) echo $result->USMLE2 == '51' ? 'selected' : ''; ?>>51</option>
+                                <option value="50" <?php if (isset($result)) echo $result->USMLE2 == '50' ? 'selected' : ''; ?>>50</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group usmle hide">
+                        <label for="chkUSMLECS" class="control-label">USMLE Step 2 CS</label>
+                        <div class="controls">
+                            <div class="check-demo-col">
+                                <div class="check-line">
+                                    <input type="checkbox" id="chkUSMLECS" name="chkUSMLECS" class='icheck-me' data-skin="square" data-color="blue">
+                                    <label class='inline' for="chkUSMLECS">Check if completed</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="control-group">
+                        <label for="cmbSpeciality" class="control-label">Specialty</label>
+                        <div class="controls">
+                            <select name="cmbSpeciality" id="cmbSpeciality" class='input-large' data-rule-required="true">
+                                <option value="">Select One</option>
+                                <?php if (is_array($speciality)) : ?>
+                                    <?php foreach ($speciality as $spec): ?>
+                                        <option value="<?php echo $spec->SpecialityID; ?>" <?php if (isset($result)) echo ($spec->SpecialityID == $result->SpecialityID) ? 'selected' : ''; ?>><?php echo $spec->Text; ?></option>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
                             </select>
                         </div>
                     </div>
                     <div class="control-group">
-                        <label for="txtDetails" class="control-label">Details</label>
+                        <label for="txtQualification" class="control-label">Postgraduate Qualifications</label>
                         <div class="controls">
-                            <textarea name="txtDetails" id="txtDetails" class='input-xlarge required' data-rule-required="true"><?php echo isset($result) ? $result->Detail : ''; ?></textarea>
+                            <textarea name="txtQualification" id="txtQualification" class='input-xlarge'><?php echo isset($result) ? $result->PostQualification : ''; ?></textarea>
                         </div>
                     </div>
-
                     <div class="control-group">
                         <label for="txtEmail" class="control-label">Email Address</label>
                         <div class="controls">
                             <input type="text" name="txtEmail" id="txtEmail" class='input-xlarge required email' value="<?php echo isset($result) ? $result->Email : ''; ?>" data-rule-required="true">
                         </div>
                     </div>
-
                     <div class="control-group">
-                        <label for="txtAddress" class="control-label">Address</label>
+                        <label for="cmbState" class="control-label">State of Residence</label>
                         <div class="controls">
-                            <textarea name="txtAddress" id="txtAddress" class='input-xlarge required' data-rule-required="true"><?php echo isset($result) ? $result->Address : ''; ?></textarea>
-                        </div>
-                    </div>
-
-
-
-                    <div class="control-group">
-                        <label for="txtState" class="control-label">State</label>
-                        <div class="controls">
-                            <select name="txtState" id="cmbState" class='input-large chosen-select' data-rule-required="true">
+                            <select name="cmbState" id="cmbState" class='input-large' data-rule-required="true">
                                 <option value="">Select One</option>
                                 <option value="Alabama" <?php if (isset($result)) echo $result->State == 'Alabama' ? 'selected' : ''; ?>>Alabama</option>
                                 <option value="Alaska" <?php if (isset($result)) echo $result->State == 'Alaska' ? 'selected' : ''; ?>>Alaska</option>
@@ -254,144 +341,62 @@
                             </select>
                         </div>
                     </div>
-
-
-
-
                     <div class="control-group">
-                        <label for="txtCountry" class="control-label">Country</label>
+                        <label for="txtCity" class="control-label">City</label>
                         <div class="controls">
-                            <input type="text" name="txtCountry" id="txtCountry" class='input-xlarge required' value="<?php if (isset($result)) echo $result->Country; ?>" data-rule-required="true">
+                            <input type="text" name="txtCity" id="txtCity" class='input-xlarge required' value="<?php if (isset($result)) echo $result->City; ?>" data-rule-required="true">
                         </div>
                     </div>
                     <div class="control-group">
-                        <label for="txtFax" class="control-label">Fax</label>
+                        <label for="txtAddress" class="control-label">Home Address</label>
                         <div class="controls">
-                            <input type="text" name="txtFax" id="txtFax" class='input-xlarge required' value="<?php if (isset($result)) echo $result->Fax; ?>" data-rule-required="true">
+                            <textarea name="txtAddress" id="txtAddress" class='input-xlarge'><?php echo isset($result) ? $result->Address : ''; ?></textarea>
                         </div>
                     </div>
                     <div class="control-group">
-                        <label for="cmbSpeciality" class="control-label">Speciality</label>
+                        <label for="txtPhone" class="control-label">Phone</label>
                         <div class="controls">
-                            <select name="cmbSpeciality" id="cmbSpeciality" class='input-large chosen-select' data-rule-required="true">
-                                <option value="0">Select</option><option value="Abdominal Radiology">Abdominal Radiology</option><option value="Abdominal Surgery">Abdominal Surgery</option><option 
-                                    value="Addiction Medicine">Addiction Medicine</option><option value="Addiction Psychiatry">Addiction Psychiatry</option><option value="Adolescent Medcine">Adolescent 
-                                    Medcine</option><option value="Adolescent Medicine-Internal Medicine">Adolescent Medicine-Internal Medicine</option><option value="Adolescent Medicine-
-                                                                                                                                                            Pediatrics">Adolescent Medicine-Pediatrics</option><option value="Adult Reconstructive Orthopedics">Adult Reconstructive Orthopedics</option><option value="Aerospace 
-                                                                                                                                                            Medicine">Aerospace Medicine</option><option value="Allergy">Allergy</option><option value="Allergy &amp; Immunology/Clinical &amp; Lab Immunology">Allergy & 
-                                    Immunology/Clinical & Lab Immunology</option><option value="Allergy And Immunology">Allergy And Immunology</option><option value="Anatomic And Clinical 
-                                                                                                                                                           Pathology">Anatomic And Clinical Pathology</option><option value="Anatomic Pathology">Anatomic Pathology</option><option 
-                                                                                                                                                           value="Anesthesiology">Anesthesiology</option><option value="Blood Banking/Transfusion Medicine">Blood Banking/Transfusion Medicine</option><option value="Cardiac 
-                                                                                                                                                           Electrophysiology">Cardiac Electrophysiology</option><option value="Cardiothoracic Radiology">Cardiothoracic Radiology</option><option value="Cardiovascular 
-                                                                                                                                                           Diseases">Cardiovascular Diseases</option><option value="Chemical Pathology">Chemical Pathology</option><option value="Child &amp; Adolescent Psychiatry">Child & 
-                                    Adolescent Psychiatry</option><option value="Child Neurology">Child Neurology</option><option value="Clinical &amp; Lab Dermatological Immunology">Clinical & Lab 
-                                    Dermatological Immunology</option><option value="Clinical &amp; Lab Immunology-Internal Medicine">Clinical & Lab Immunology-Internal Medicine</option><option 
-                                    value="Clinical &amp; Lab Immunology-Pediatrics">Clinical & Lab Immunology-Pediatrics</option><option value="Clinical Biochemical Genetics">Clinical Biochemical 
-                                    Genetics</option><option value="Clinical Cytogenetics">Clinical Cytogenetics</option><option value="Clinical Molecular Genetics">Clinical Molecular 
-                                    Genetics</option><option value="Clinical Neurophysiology">Clinical Neurophysiology</option><option value="Clinical Pathology">Clinical Pathology</option><option 
-                                    value="Clinical Pharmacology">Clinical Pharmacology</option><option value="Colon And Rectal Surgery">Colon And Rectal Surgery</option><option value="Cosmetic 
-                                    Surgery">Cosmetic Surgery</option><option value="Craniofacial Surgery">Craniofacial Surgery</option><option value="Critical Care Medicine-Anesthesiology">Critical Care 
-                                    Medicine-Anesthesiology</option><option value="Critical Care Medicine-Internal Medicine">Critical Care Medicine-Internal Medicine</option><option value="Critical Care 
-                                                                                                                                                                                  Medicine-Obstetrics &amp; Gynecology">Critical Care Medicine-Obstetrics & Gynecology</option><option value="Cytopathology">Cytopathology</option><option 
-                                                                                                                                                                                  value="Dermatologic Surgery">Dermatologic Surgery</option><option value="Dermatology">Dermatology</option><option 
-                                                                                                                                                                                  value="Dermatopathology">Dermatopathology</option><option value="Developmental-Behavioral Pediatrics">Developmental-Behavioral Pediatrics</option><option 
-                                                                                                                                                                                  value="Diabetes">Diabetes</option><option value="Diagnostic Radiology">Diagnostic Radiology</option><option value="Emergency Medicine">Emergency 
-                                    Medicine</option><option value="Endocrinology, Diabetes &amp; Metabolism">Endocrinology, Diabetes & Metabolism</option><option value="Endovascular Surgical 
-                                                                                                                                                               Neuroradiology">Endovascular Surgical Neuroradiology</option><option value="Epidemiology">Epidemiology</option><option value="Facial Plastic Surgery">Facial Plastic 
-                                    Surgery</option><option value="Family Medicine">Family Medicine</option><option value="Forensic Pathology">Forensic Pathology</option><option value="Forensic 
-                                                                                                                                                                              Psychiatry">Forensic Psychiatry</option><option value="Gastroenterology">Gastroenterology</option><option value="General Practice">General Practice</option><option 
-                                                                                                                                                                              value="General Preventive Medicine">General Preventive Medicine</option><option value="General Surgery">General Surgery</option><option value="Geriatric Medicine-
-                                                                                                                                                                              Family Practice">Geriatric Medicine-Family Practice</option><option value="Geriatric Medicine-Internal Medicine">Geriatric Medicine-Internal Medicine</option><option 
-                                                                                                                                                                              value="Geriatric Psychiatry">Geriatric Psychiatry</option><option value="Gynecological Oncology">Gynecological Oncology</option><option 
-                                                                                                                                                                              value="Gynecology">Gynecology</option><option value="Hand Surgery">Hand Surgery</option><option value="Head And Neck Surgery">Head And Neck Surgery</option><option 
-                                                                                                                                                                              value="Hematology-Internal Medicine">Hematology-Internal Medicine</option><option value="Hematology-Pathology">Hematology-Pathology</option><option 
-                                                                                                                                                                              value="Hematology/Oncology">Hematology/Oncology</option><option value="Hepatology">Hepatology</option><option value="Hospitalist">Hospitalist</option><option 
-                                                                                                                                                                              value="Immunology">Immunology</option><option value="Infectious Diseases">Infectious Diseases</option><option value="Internal Medicine">Internal 
-                                    Medicine</option><option value="Internal Medicine/Pediatrics">Internal Medicine/Pediatrics</option><option value="Interventional Cardiology">Interventional 
-                                    Cardiology</option><option value="Legal Medicine">Legal Medicine</option><option value="Maternal &amp; Fetal Medicine">Maternal & Fetal Medicine</option><option 
-                                    value="Medical Genetics">Medical Genetics</option><option value="Medical Management">Medical Management</option><option value="Medical Microbiology">Medical 
-                                    Microbiology</option><option value="Medical Oncology">Medical Oncology</option><option value="Medical Toxicology-Emergency Medicine">Medical Toxicology-Emergency 
-                                    Medicine</option><option value="Medical Toxicology-Pediatrics">Medical Toxicology-Pediatrics</option><option value="Medical Toxicology-Preventive Medicine">Medical 
-                                    Toxicology-Preventive Medicine</option><option value="Molecular Genetic Pathology (Medical Genetics)">Molecular Genetic Pathology (Medical Genetics)</option><option 
-                                    value="Molecular Genetic Pathology (Pathology)">Molecular Genetic Pathology (Pathology)</option><option value="Musculoskeletal Oncology">Musculoskeletal 
-                                    Oncology</option><option value="Musculoskeletal Radiology">Musculoskeletal Radiology</option><option value="Neonatal-Perinatal Medicine">Neonatal-Perinatal 
-                                    Medicine</option><option value="Nephrology">Nephrology</option><option value="Neurodevelopmental Disabilities (Pediatrics)">Neurodevelopmental Disabilities 
-                                    (Pediatrics)</option><option value="Neurodevelopmental Disabilities (Psychiatry)">Neurodevelopmental Disabilities (Psychiatry)</option><option value="Neurological 
-                                                                                                                                                                               Surgery">Neurological Surgery</option><option value="Neurology">Neurology</option><option value="Neurology/Diagnostic Radiology/Neuroradiology">Neurology/Diagnostic 
-                                    Radiology/Neuroradiology</option><option value="Neuropathology">Neuropathology</option><option value="Neuropsychiatry">Neuropsychiatry</option><option 
-                                    value="Neuroradiology">Neuroradiology</option><option value="Nuclear Cardiology">Nuclear Cardiology</option><option value="Nuclear Medicine">Nuclear 
-                                    Medicine</option><option value="Nuclear Radiology">Nuclear Radiology</option><option value="Nutrition">Nutrition</option><option 
-                                    value="Obstetrics">Obstetrics</option><option value="Obstetrics And Gynecology">Obstetrics And Gynecology</option><option value="Occupational Medicine">Occupational 
-                                    Medicine</option><option value="Ophthalmology">Ophthalmology</option><option value="Oral And Maxillofacial Surgery">Oral And Maxillofacial Surgery</option><option 
-                                    value="Orthopedic Surgery">Orthopedic Surgery</option><option value="Orthopedic Surgery Of The Spine">Orthopedic Surgery Of The Spine</option><option value="Orthopedic 
-                                    Trauma">Orthopedic Trauma</option><option value="Orthopedics-Foot And Ankle">Orthopedics-Foot And Ankle</option><option value="Osteopathic Manipulative 
-                                    Medicine">Osteopathic Manipulative Medicine</option><option value="Other Specialty">Other Specialty</option><option 
-                                    value="Otolaryngology">Otolaryngology</option><option value="Otology">Otology</option><option value="Pain Management">Pain Management</option><option value="Pain 
-                                    Management (Physical Medicine &amp; Rehabilitati)">Pain Management (Physical Medicine & Rehabilitati)</option><option value="Pain Medicine">Pain 
-                                    Medicine</option><option value="Palliative Medicine">Palliative Medicine</option><option value="Pediatric Allergy">Pediatric Allergy</option><option value="Pediatric 
-                                                                                                                                                                                     Anesthesiology">Pediatric Anesthesiology</option><option value="Pediatric Cardiology">Pediatric Cardiology</option><option value="Pediatric Cardiothoracic 
-                                                                                                                                                                                     Surgery">Pediatric Cardiothoracic Surgery</option><option value="Pediatric Critical Care Medicine">Pediatric Critical Care Medicine</option><option value="Pediatric 
-                                                                                                                                                                                     Dermatology">Pediatric Dermatology</option><option value="Pediatric Emergency Medicine-Emergency Medicine">Pediatric Emergency Medicine-Emergency 
-                                    Medicine</option><option value="Pediatric Emergency Medicine-Pediatrics">Pediatric Emergency Medicine-Pediatrics</option><option value="Pediatric 
-                                                                                                                                                                 Endocrinology">Pediatric Endocrinology</option><option value="Pediatric Hematology-Oncology">Pediatric Hematology-Oncology</option><option value="Pediatric Infectious 
-                                                                                                                                                                 Diseases">Pediatric Infectious Diseases</option><option value="Pediatric Nephrology">Pediatric Nephrology</option><option value="Pediatric Ophthalmology">Pediatric 
-                                    Ophthalmology</option><option value="Pediatric Otolaryngology">Pediatric Otolaryngology</option><option value="Pediatric Pathology">Pediatric Pathology</option><option 
-                                    value="Pediatric Pulmonology">Pediatric Pulmonology</option><option value="Pediatric Radiology">Pediatric Radiology</option><option value="Pediatric Rehabilitation 
-                                    Medicine">Pediatric Rehabilitation Medicine</option><option value="Pediatric Rheumatology">Pediatric Rheumatology</option><option value="Pediatric Surgery-
-                                    Neurology">Pediatric Surgery-Neurology</option><option value="Pediatric Surgery-Surgery">Pediatric Surgery-Surgery</option><option value="Pediatric Urology">Pediatric 
-                                    Urology</option><option value="Pediatrics">Pediatrics</option><option value="Pediatrics Orthopedics">Pediatrics Orthopedics</option><option value="Pharmaceutical 
-                                                                                                                                                                            Medicine">Pharmaceutical Medicine</option><option value="Physical Medicine And Rehabilitation">Physical Medicine And Rehabilitation</option><option value="Plastic 
-                                                                                                                                                                            Surgery">Plastic Surgery</option><option value="Plastic Surgery Within The Head And Neck">Plastic Surgery Within The Head And Neck</option><option 
-                                                                                                                                                                            value="Proctology">Proctology</option><option value="Psychiatry">Psychiatry</option><option value="Psychoanalysis">Psychoanalysis</option><option value="Public Health 
-                                                                                                                                                                            And General Preventive Medicine">Public Health And General Preventive Medicine</option><option value="Pulmonary Critical Care Medicine">Pulmonary Critical Care 
-                                    Medicine</option><option value="Pulmonary Diseases">Pulmonary Diseases</option><option value="Radiation Oncology">Radiation Oncology</option><option 
-                                    value="Radiological Physics">Radiological Physics</option><option value="Radiology">Radiology</option><option value="Reproductive Endocrinology">Reproductive 
-                                    Endocrinology</option><option value="Rheumatology">Rheumatology</option><option value="Selective Pathology">Selective Pathology</option><option value="Sleep 
-                                                                                                                                                                                Medicine">Sleep Medicine</option><option value="Spinal Cord Injury">Spinal Cord Injury</option><option value="Sports Medicine (Physical Medicine &amp; 
-                                                                                                                                                                                Rehabilitati)">Sports Medicine (Physical Medicine & Rehabilitati)</option><option value="Sports Medicine-Emergency Medicine">Sports Medicine-Emergency 
-                                    Medicine</option><option value="Sports Medicine-Family Practice">Sports Medicine-Family Practice</option><option value="Sports Medicine-Internal Medicine">Sports 
-                                    Medicine-Internal Medicine</option><option value="Sports Medicine-Orthopedic Surgery">Sports Medicine-Orthopedic Surgery</option><option value="Sports Medicine-
-                                                                                                                                                                         Pediatrics">Sports Medicine-Pediatrics</option><option value="Surgery Critical Care-Surgery">Surgery Critical Care-Surgery</option><option value="Surgical 
-                                                                                                                                                                         Oncology">Surgical Oncology</option><option value="Thoracic Surgery">Thoracic Surgery</option><option value="Transitional Year">Transitional Year</option>
-                                <option value="Transplantation Surgery">Transplantation Surgery</option>
-                                <option value="Trauma Surgery">Trauma Surgery</option>
-                                <option value="Undersea Medicine & Hyperbaric Medicine">Undersea Medicine & Hyperbaric Medicine</option>
-                                <option value="Unspecified">Unspecified</option>
-                                <option value="Urgent Care Medicine">Urgent Care Medicine</option>
-                                <option value="Urology">Urology</option>
-                                <option value="Vascular & Interventional Radiology">Vascular & Interventional Radiology</option>
-                                <option value="Vascular Medicine">Vascular Medicine</option>
-                                <option value="Vascular Surgery">Vascular Surgery</option>
-                            </select>
+                            <input type="text" name="txtPhone" id="txtPhone" class='input-xlarge required' value="<?php if (isset($result)) echo $result->Phone; ?>" data-rule-required="true">
                         </div>
                     </div>
                     <div class="control-group">
-                        <label for="cmbPracticeType" class="control-label">Practice Type</label>
+                        <label for="rdoContactMethod" class="control-label">Preferred Method of Contact</label>
                         <div class="controls">
-                            <select name="cmbPracticeType" id="cmbPracticeType" class='input-large chosen-select' data-rule-required="true">
-                                <option value="">Select One</option>
-                                <option value="Male" <?php if (isset($result)) echo $result->PracticeType == 'Male' ? 'selected' : ''; ?>>Male</option>
-                                <option value="Female" <?php if (isset($result)) echo $result->PracticeType == 'Female' ? 'selected' : ''; ?>>Female</option>
-                            </select>
+                            <div class="check-demo-col">
+                                <div class="check-line">
+                                    <input type="radio" id="ContactEmail" class='icheck-me' name="rdoContactMethod" value="1" data-skin="square" data-color="blue" checked>
+                                    <label class='inline' for="ContactEmail">Email address only</label>
+                                </div>
+                                <div class="check-line">
+                                    <input type="radio" id="ContactPhone" class='icheck-me' name="rdoContactMethod" value="2" data-skin="square" data-color="blue">
+                                    <label class='inline' for="ContactPhone">Phone Number only</label>
+                                </div>
+                                <div class="check-line">
+                                    <input type="radio" id="ContactEmailPhone" class='icheck-me' name="rdoContactMethod" value="" data-skin="square" data-color="blue">
+                                    <label class='inline' for="ContactEmailPhone">Email address and Phone Number</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="control-group">
-                        <label for="cmbMemberType" class="control-label">Member Type</label>
+                        <label for="rdoStatus" class="control-label">Status</label>
                         <div class="controls">
-                            <select name="cmbMemberType" id="cmbMemberType" class='input-large chosen-select' data-rule-required="true">
-                                <option value="">Select One</option>
-                                <option value="Male" <?php if (isset($result)) echo $result->MemberType == 'Male' ? 'selected' : ''; ?>>Male</option>
-                                <option value="Female" <?php if (isset($result)) echo $result->MemberType == 'Female' ? 'selected' : ''; ?>>Female</option>
-                            </select>
+                            <div class="check-demo-col">
+                                <div class="check-line">
+                                    <input type="radio" id="Active" class='icheck-me' name="rdoStatus" value="1" data-skin="square" data-color="blue" checked>
+                                    <label class='inline' for="Active">Active</label>
+                                </div>
+                                <div class="check-line">
+                                    <input type="radio" id="InActive" class='icheck-me' name="rdoStatus" value="0" data-skin="square" data-color="blue">
+                                    <label class='inline' for="InActive">In Active</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-
 
                     <div class="span12">
                         <div class="form-actions">
-                            <input type="hidden" name="action" value="<?php echo isset($result) ? 'edit' : 'insert'; ?>">
-                            <button type="submit" name="submit" value="frmStudentSubmit" class="btn btn-primary">Save</button>
+                            <button type="submit" name="submit" value="frmDoctorsSubmit" class="btn btn-primary">Save</button>
                             <button type="button" class="btn">Cancel</button>
                         </div>
                     </div>
@@ -400,3 +405,16 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#chkUSMLE').change(function(){
+            if( $(this).prop('checked') ) {
+                $('.usmle').removeClass('hide');
+            } else {
+                $('.usmle').addClass('hide');
+            }
+        });
+        $('#chkUSMLE').trigger('change');
+    });
+</script>
