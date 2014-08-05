@@ -1,0 +1,7 @@
+#nav > li.current:after {background:#ac1b1a;}
+#nav li:hover > a { color:#ac1b1a; }#nav ul li a:hover, #nav li.current ul li a:hover, .nav-wrap2 #nav ul li a:hover, .nav-wrap2.darknavi #nav ul li a:hover, #nav ul li.current > a , #nav ul li:hover > a { color:#ac1b1a;  }.icon-box1 i { background-color:#520201;}
+.icon-box1:hover i { background-color:#b41c1b; }.blog-line:hover h4 a { color:#dd3333; }
+.blog-post a:hover { color:#dd3333; }
+#topsearch{margin-bottom: 25px}
+select, input[type="number"]{width: 100%}
+input[type="number"]{padding: 3px 0px}
